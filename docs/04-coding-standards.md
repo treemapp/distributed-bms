@@ -46,6 +46,26 @@ Keep comments accurate and update them when the code changes.
 
 The project uses consistent naming conventions across source code and configuration.
 
+### General
+
+Choose descriptive names.
+
+Avoid abbreviations unless they are standard within the building automation industry.
+
+Examples:
+
+* `supply_air_temperature`
+* `mixing_valve`
+* `alarm_state`
+
+Avoid meaningless names such as:
+
+* `temp1`
+* `data2`
+* `obj`
+
+---
+
 ### Python
 
 Python identifiers use `snake_case`.
@@ -75,26 +95,6 @@ component-type: supply-air-fan
 ```
 
 Component names, point names and other user-defined identifiers should follow the conventions described in the configuration model.
-
----
-
-## Naming
-
-Choose descriptive names.
-
-Avoid abbreviations unless they are standard within the building automation industry.
-
-Examples:
-
-* `supply_air_temperature`
-* `mixing_valve`
-* `alarm_state`
-
-Avoid meaningless names such as:
-
-* `temp1`
-* `data2`
-* `obj`
 
 ---
 
