@@ -116,7 +116,7 @@ Application behaviour belongs in JavaScript.
 
 ## YAML
 
-YAML defines engineering metadata.
+YAML defines all metadata.
 
 Configuration should remain human-readable and suitable for version control.
 
@@ -144,7 +144,7 @@ Drivers may be open source or proprietary.
 
 # Configuration Before Code
 
-Where practical, engineering behaviour should be defined by configuration rather than source code.
+Where practical, software behaviour should be defined by configuration rather than source code.
 
 New equipment types should ideally be introduced by extending catalogues and configuration files rather than modifying software.
 
