@@ -64,8 +64,6 @@ Avoid meaningless names such as:
 * `data2`
 * `obj`
 
----
-
 ### Python
 
 Python identifiers use `snake_case`.
@@ -110,8 +108,6 @@ Lines should remain reasonably short.
 
 Blank lines should separate logical sections.
 
----
-
 ## Imports
 
 Imports are grouped as:
@@ -120,15 +116,11 @@ Imports are grouped as:
 2. Third-party packages
 3. Project modules
 
----
-
 ## Functions
 
 Functions should have a single responsibility.
 
 Functions exceeding approximately one page should be reviewed for possible decomposition.
-
----
 
 ## Classes
 
@@ -155,8 +147,6 @@ if (value == true) {
   updatePoint();
 }
 ```
-
----
 
 ## Style
 
