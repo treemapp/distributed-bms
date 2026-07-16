@@ -59,13 +59,9 @@ It is the only configuration file that has knowledge of PLC-specific variables.
 
 ## name
 
-**Required**
+**Required:** Yes
 
-Yes
-
-**Type**
-
-Text
+**Type:** Text
 
 **Description**
 
@@ -73,7 +69,7 @@ Unique name of the interface.
 
 The name shall be unique within the site.
 
-Examples:
+**Examples:**
 
 ```yaml
 name: cabinet-1
@@ -83,18 +79,14 @@ name: cabinet-1
 
 ## version
 
-**Required**
+**Required:** Yes
 
-Yes
-
-**Type**
-
-Text
+**Type:** Text
 
 **Description**
 Version number of the file
 
-Example:
+**Example:**
 ```yaml
 version: 1
 ```
@@ -103,19 +95,15 @@ version: 1
 
 ## description
 
-**Required**
+**Required:** No
 
-No
-
-**Type**
-
-Text
+**Type:** Text
 
 **Description**
 
 Human-readable description of the interface.
 
-Example:
+**Example:**
 
 ```yaml
 description: Control Cabinet main office building
@@ -125,19 +113,15 @@ description: Control Cabinet main office building
 
 ## driver
 
-**Required**
+**Required:** Yes
 
-Yes
-
-**Type**
-
-Text
+**Type:** Text
 
 **Description**
 
 Communication driver used by the interface.
 
-Examples include:
+**Examples include:**
 
 * beckhoff-ads
 * saia-sbus
@@ -147,19 +131,15 @@ Examples include:
 
 ## address
 
-**Required**
+**Required:** Depends on driver.
 
-Depends on driver.
-
-**Type**
-
-Text
+**Type:** Text
 
 **Description**
 
 Network address or connection string required by the selected driver.
 
-Examples:
+**Examples:**
 
 ```yaml
 address: 10.0.19.1
@@ -173,21 +153,56 @@ address: 192.168.10.5
 
 ---
 
+## authentication
+
+**Required:** No
+
+**Type:** Object
+
+**Description**
+
+Authentication settings used by the selected driver.
+
+Many industrial protocols, such as Beckhoff ADS and SAIA S-Bus, do not require authentication. Other drivers, such as REST-based APIs, may require credentials or tokens.
+
+The contents of the `authentication` section are driver-specific.
+
+Where practical, sensitive information such as passwords or API tokens should not be stored directly in configuration files committed to version control. Instead, drivers should support loading secrets from environment variables or external files.
+
+### Example (Username and Password)
+
+```yaml
+authentication:
+  username: operator
+  password-env: EMS_PASSWORD
+```
+
+### Example (Bearer Token)
+
+```yaml
+authentication:
+  bearer-token-env: EMS_TOKEN
+```
+
+### Example (No Authentication)
+
+```yaml
+# authentication section omitted
+```
+
+---
+
 ## poll-frequency
 
-**Required**
+**Required:** No
 
-No
-
-**Type**
-
-Integer
+**Type:** Integer
 
 **Description**
 
 Polling interval used by the communication driver.
 
-Example:
+**Example:**
 
 ```yaml
 poll-frequency: 1000
@@ -197,13 +212,9 @@ poll-frequency: 1000
 
 ## variables
 
-**Required**
+**Required:** Yes
 
-Yes
-
-**Type**
-
-List
+**Type:** List
 
 **Description**
 
@@ -211,7 +222,7 @@ Defines the PLC variables that are made available to the Node.
 
 Each variable requires a unique identifier.
 
-Example:
+**Example:**
 
 ```yaml
 variables:
