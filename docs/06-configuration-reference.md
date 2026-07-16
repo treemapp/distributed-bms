@@ -31,6 +31,7 @@ component-types.yaml and point-types.yaml are the same on every node.
 Additional configuration files may be introduced in future releases.
 
 A Node may contain:
+
 config/
 
   interfaces/
@@ -43,6 +44,7 @@ config/
       ahu-2.yaml
       heating.yaml
       chilled-water.yaml
+
 ---
 
 # Interface configuration file (interface-name.yaml)
@@ -61,7 +63,7 @@ It is the only configuration file that has knowledge of PLC-specific variables.
 
 **Required:** Yes
 
-**Type:** Text
+**Data Type:** Text
 
 **Description**
 
@@ -81,7 +83,7 @@ name: cabinet-1
 
 **Required:** Yes
 
-**Type:** Text
+**Data Type:** Text
 
 **Description**
 Version number of the file
@@ -97,7 +99,7 @@ version: 1
 
 **Required:** No
 
-**Type:** Text
+**Data Type:** Text
 
 **Description**
 
@@ -115,7 +117,7 @@ description: Control Cabinet main office building
 
 **Required:** Yes
 
-**Type:** Text
+**Data Type:** Text
 
 **Description**
 
@@ -133,7 +135,7 @@ Communication driver used by the interface.
 
 **Required:** Depends on driver.
 
-**Type:** Text
+**Data Type:** Text
 
 **Description**
 
@@ -157,7 +159,7 @@ address: 192.168.10.5
 
 **Required:** No
 
-**Type:** Object
+**Data Type:** Object
 
 **Description**
 
@@ -192,20 +194,24 @@ authentication:
 
 ---
 
-## poll-frequency
+## scan-interval-ms
 
 **Required:** No
 
-**Type:** Integer
+**Data Type:** Integer
 
 **Description**
 
-Polling interval used by the communication driver.
+The interval, in milliseconds, between successive reads of the PLC by the communication driver.
+
+All time intervals within the distributed-bms project are expressed in milliseconds unless explicitly stated otherwise.
+
+Different drivers may impose practical minimum polling intervals depending on the communication protocol and controller performance.
 
 **Example:**
 
 ```yaml
-poll-frequency: 1000
+scan-interval-ms: 1000
 ```
 
 ---
@@ -214,7 +220,7 @@ poll-frequency: 1000
 
 **Required:** Yes
 
-**Type:** List
+**Data Type:** List
 
 **Description**
 
@@ -240,7 +246,191 @@ The mapping between PLC variables and Points is defined by the System configurat
 
 # System configuration file (system-name.yaml)
 
-(Documentation to be completed.)
+## Purpose
+
+A System configuration file defines a single logical building system.
+
+Examples include an air handling unit (AHU), heating system, chilled water system or domestic hot water system.
+
+A Node may contain one or more System configuration files.
+
+Each System references one or more Components and the Interface through which their Points are obtained.
+
+---
+
+## version
+
+**Required:** Yes
+
+**Data Type:** Integer
+
+**Description**
+
+Configuration schema version.
+
+**Example**
+
+```yaml
+version: 1
+```
+
+---
+
+## name
+
+**Required:** Yes
+
+**Data Type:** Text
+
+**Description**
+
+Unique name of the System.
+
+The name shall be unique within the Node.
+
+**Example**
+
+```yaml
+name: ahu-1
+```
+
+---
+
+## description
+
+**Required:** No
+
+**Data Type:** Text
+
+**Description**
+
+Human-readable description of the System.
+
+**Example**
+
+```yaml
+description: Operating Theatre 8 Air Handling Unit
+```
+
+---
+
+## category
+
+**Required:** Yes
+
+**Data Type:** Text
+
+**Description**
+
+The category of building system.
+
+Examples include:
+
+* air-handling
+* heating
+* chilled-water
+* domestic-hot-water
+* lighting
+
+**Example**
+
+```yaml
+category: air-handling
+```
+
+---
+
+## interface
+
+**Required:** Yes
+
+**Data Type:** Text
+
+**Description**
+
+Name of the Interface configuration that provides communication with this System.
+
+**Example**
+
+```yaml
+interface: cabinet-1
+```
+
+---
+
+## components
+
+**Required:** Yes
+
+**Data Type:** List
+
+**Description**
+
+Defines the Components that make up the System.
+
+Each Component references a Component Type defined in the component catalogue.
+
+The mapping between Component Points and PLC Variables is defined within each Component.
+
+**Example**
+
+```yaml
+components:
+
+  - name: tf1
+    type: supply-air-fan
+
+  - name: ff1
+    type: extract-air-fan
+
+  - name: gt21
+    type: supply-air-temperature-sensor
+```
+
+---
+
+## status
+
+**Required:** No
+
+**Data Type:** Object
+
+**Description**
+
+Defines how the operational state of the System is determined.
+
+This may reference one or more Component Points.
+
+The exact structure is under development.
+
+---
+
+## schedule
+
+**Required:** No
+
+**Data Type:** Object
+
+**Description**
+
+Defines scheduling behaviour for the System.
+
+This section will be documented when the scheduling model has been finalised.
+
+---
+
+## alarms
+
+**Required:** No
+
+**Data Type:** Object
+
+**Description**
+
+Defines optional System-level alarm behaviour.
+
+This section will be documented in a future revision.
+
 
 ---
 
