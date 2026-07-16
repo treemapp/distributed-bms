@@ -10,28 +10,46 @@ Configuration files should remain human-readable, easy to maintain and suitable 
 
 This document describes the purpose and meaning of each configuration field. It does not describe runtime behaviour.
 
+
 ---
 
-# Configuration Files
+# Configuration File Types
 
 The platform currently defines the following configuration files:
 
 | File                 | Purpose                          |
 | -------------------- | -------------------------------- |
-| interface.yaml       | Defines communication with PLCs  |
-| system.yaml          | Defines building systems         |
+| interface-name.yaml  | Defines communication with PLCs  |
+| system-name.yaml     | Defines building systems         |
 | component-types.yaml | Defines reusable component types |
 | point-types.yaml     | Defines reusable point types     |
 
+interface.yaml & one or several system.yaml are unique to a distributed node.
+
+component-types.yaml and point-types.yaml are the same on every node.
+
 Additional configuration files may be introduced in future releases.
 
+A Node may contain:
+config/
+
+  interfaces/
+      cabinet-1.yaml
+      cabinet-2.yaml
+      chiller-plant.yaml
+
+  systems/
+      ahu-1.yaml
+      ahu-2.yaml
+      heating.yaml
+      chilled-water.yaml
 ---
 
-# interface.yaml
+# Interface configuration file (interface-name.yaml)
 
 ## Purpose
 
-`interface.yaml` defines communication between a Node and one or more PLCs.
+Interface configuration files define communication between a Node and one or more PLCs.
 
 It contains communication settings and point mappings.
 
@@ -58,7 +76,7 @@ The name shall be unique within the site.
 Examples:
 
 ```yaml
-name: 1411-AS01
+name: cabinet-1
 ```
 
 ---
@@ -80,7 +98,7 @@ Human-readable description of the interface.
 Example:
 
 ```yaml
-description: Apparatskåp Hus 11 Plan 5
+description: Control Cabinet main office building
 ```
 
 ---
@@ -189,19 +207,19 @@ The mapping between PLC variables and distributed-bms Points is defined by the S
 
 ---
 
-# system.yaml
+# System configuration file (system-name.yaml)
 
 (Documentation to be completed.)
 
 ---
 
-# component-types.yaml
+# Component types configuration file (component-types.yaml)
 
 (Documentation to be completed.)
 
 ---
 
-# point-types.yaml
+# Point types configuration file (point-types.yaml)
 
 (Documentation to be completed.)
 
