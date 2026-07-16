@@ -403,6 +403,21 @@ This may reference one or more Component Points.
 
 The exact structure is under development.
 
+**Example:**
+
+```yaml
+status:
+
+  running:
+    point: tf1.running
+
+  enabled:
+    point: tf1.command
+
+  summary:
+    point: gp11.process-value
+```
+
 ---
 
 ## schedule
