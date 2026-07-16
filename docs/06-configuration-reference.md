@@ -81,6 +81,24 @@ name: cabinet-1
 
 ---
 
+## version
+
+**Required**
+
+Yes
+
+**Type**
+
+Text
+
+**Description**
+Version number of the file
+
+Example:
+version-0.01
+
+---
+
 ## description
 
 **Required**
@@ -203,7 +221,7 @@ variables:
     description: Supply air temperature set point
 ```
 
-The mapping between PLC variables and distributed-bms Points is defined by the System configuration.
+The mapping between PLC variables and Points is defined by the System configuration.
 
 ---
 
