@@ -95,7 +95,9 @@ Text
 Version number of the file
 
 Example:
-version-0.01
+```yaml
+version: 1
+```
 
 ---
 
