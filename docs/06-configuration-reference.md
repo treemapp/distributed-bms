@@ -516,7 +516,7 @@ Control strategies, such as weather compensation, PID control and frost protecti
 
 A pump used to circulate water within a heating or cooling circuit.
 
-### Typcial Points
+### Typical Points
 
 * running
 
@@ -539,7 +539,7 @@ A pump used to circulate water within a heating or cooling circuit.
 
 A valve with two discrete positions, typically open or closed.
 
-### Typcial Points
+### Typical Points
 
 * position
 
@@ -556,7 +556,7 @@ A valve with two discrete positions, typically open or closed.
 
 Measures carbon dioxide concentration.
 
-### Typcial Points
+### Typical Points
 
 * process-value
 
@@ -574,7 +574,7 @@ Measures carbon dioxide concentration.
 
 A cooling coil used to reduce air temperature.
 
-### Typcial Points
+### Typical Points
 
 None.
 
@@ -593,7 +593,7 @@ None.
 
 A motorised air damper.
 
-### Typcial Points
+### Typical Points
 
 * position
 
@@ -612,7 +612,7 @@ A motorised air damper.
 
 A fan supplying conditioned air to a ventilation system.
 
-### Typcial Points
+### Typical Points
 
 * running
 
@@ -632,7 +632,7 @@ A fan supplying conditioned air to a ventilation system.
 
 An air filter used within a ventilation system.
 
-### Typcial Points
+### Typical Points
 
 * dirty
 
@@ -650,7 +650,7 @@ An air filter used within a ventilation system.
 
 Transfers heat between two separate air or water streams.
 
-### Typcial Points
+### Typical Points
 
 None.
 
@@ -668,7 +668,7 @@ None.
 
 A heating coil used to raise air temperature.
 
-### Typcial Points
+### Typical Points
 
 None.
 
@@ -687,7 +687,7 @@ None.
 
 Measures relative humidity.
 
-### Typcial Points
+### Typical Points
 
 * process-value
 
@@ -706,7 +706,7 @@ Measures relative humidity.
 
 A modulating valve used to control the temperature of a water circuit.
 
-### Typcial Points
+### Typical Points
 
 * position
 
@@ -724,7 +724,7 @@ A modulating valve used to control the temperature of a water circuit.
 
 Measures the pressure of air or water.
 
-### Typcial Points
+### Typical Points
 
 * process-value
 
@@ -743,7 +743,7 @@ Measures the pressure of air or water.
 
 Measures the temperature of air, water or another medium.
 
-### Typcial Points
+### Typical Points
 
 * process-value
 
