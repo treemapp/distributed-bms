@@ -495,11 +495,264 @@ This section will be documented in a future revision.
 
 - [Purpose](#purpose-2)
 - [version](#version-2)
-- [component-type](#component-type)
 - [description](#description-2)
 - [point-types](#point-types)
-- [symbol](#symbol)
-- [defaults](#defaults)
+
+## Purpose
+
+The Component Type Catalogue defines the reusable physical components available to System configuration files.
+
+Each Component Type represents a physical device or piece of equipment and defines the Point Types that it may expose.
+
+System configuration files instantiate Component Types and map their Points to PLC Variables.
+
+Control strategies, such as weather compensation, PID control and frost protection, are not Component Types. These are modelled separately.
+
+---
+
+## circulation-pump
+
+**Description**
+
+A pump used to circulate water within a heating or cooling circuit.
+
+### Typcial Points
+
+* running
+
+### Optional Points
+
+* command
+* fault
+* overload
+* hours-run
+* start-count
+* speed
+* power
+
+
+---
+
+## two-position-valve
+
+**Description**
+
+A valve with two discrete positions, typically open or closed.
+
+### Typcial Points
+
+* position
+
+### Optional Points
+
+* command
+* fault
+
+---
+
+## co2-sensor
+
+**Description**
+
+Measures carbon dioxide concentration.
+
+### Typcial Points
+
+* process-value
+
+### Optional Points
+
+* set-point
+* high-alarm
+* sensor-fault
+
+---
+
+## cooling-coil
+
+**Description**
+
+A cooling coil used to reduce air temperature.
+
+### Typcial Points
+
+None.
+
+### Optional Points
+
+* inlet-temperature
+* outlet-temperature
+* valve-position
+* condensation-alarm
+
+---
+
+## damper
+
+**Description**
+
+A motorised air damper.
+
+### Typcial Points
+
+* position
+
+### Optional Points
+
+* command
+* open
+* closed
+* fault
+
+---
+
+## fan
+
+**Description**
+
+A fan supplying conditioned air to a ventilation system.
+
+### Typcial Points
+
+* running
+
+### Optional Points
+
+* command
+* speed
+* fault
+* hours-run
+* start-count
+
+---
+
+## filter
+
+**Description**
+
+An air filter used within a ventilation system.
+
+### Typcial Points
+
+* dirty
+
+### Optional Points
+
+* pressure-drop
+* warning
+* alarm
+
+---
+
+## heat-exchanger
+
+**Description**
+
+Transfers heat between two separate air or water streams.
+
+### Typcial Points
+
+None.
+
+### Optional Points
+
+* efficiency
+* bypass-position
+* frost-alarm
+
+---
+
+## heating-coil
+
+**Description**
+
+A heating coil used to raise air temperature.
+
+### Typcial Points
+
+None.
+
+### Optional Points
+
+* inlet-temperature
+* outlet-temperature
+* valve-position
+* frost-alarm
+
+---
+
+## humidity-sensor
+
+**Description**
+
+Measures relative humidity.
+
+### Typcial Points
+
+* process-value
+
+### Optional Points
+
+* set-point
+* high-alarm
+* low-alarm
+* sensor-fault
+
+---
+
+## mixing-valve
+
+**Description**
+
+A modulating valve used to control the temperature of a water circuit.
+
+### Typcial Points
+
+* position
+
+### Optional Points
+
+* command
+* fault
+* manual-mode
+
+---
+
+## pressure-sensor
+
+**Description**
+
+Measures the pressure of air or water.
+
+### Typcial Points
+
+* process-value
+
+### Optional Points
+
+* set-point
+* high-alarm
+* low-alarm
+* sensor-fault
+
+---
+
+## temperature-sensor
+
+**Description**
+
+Measures the temperature of air, water or another medium.
+
+### Typcial Points
+
+* process-value
+
+### Optional Points
+
+* set-point
+* high-alarm
+* low-alarm
+* sensor-fault
 
 ---
 
