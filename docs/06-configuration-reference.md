@@ -414,13 +414,16 @@ The mapping between Component Points and PLC Variables is defined within each Co
 components:
 
   - name: tf1
-    type: supply-air-fan
+    type: fan
+    role: supply-air
 
   - name: ff1
-    type: extract-air-fan
+    type: fan
+    role: extract-air
 
-  - name: gt21
-    type: supply-air-temperature-sensor
+  - name: gt11
+    type: temperature-sensor
+    role: supply-air
 ```
 
 ---
@@ -496,7 +499,7 @@ This section will be documented in a future revision.
 - [Purpose](#purpose-2)
 - [version](#version-2)
 - [description](#description-2)
-- [point-types](#point-types)
+- [component-types](#component-types)
 
 ## Purpose
 
@@ -508,252 +511,64 @@ System configuration files instantiate Component Types and map their Points to P
 
 Control strategies, such as weather compensation, PID control and frost protection, are not Component Types. These are modelled separately.
 
----
-
-## circulation-pump
-
-**Description**
-
-A pump used to circulate water within a heating or cooling circuit.
-
-### Typical Points
-
-* running
-
-### Optional Points
-
-* command
-* fault
-* overload
-* hours-run
-* start-count
-* speed
-* power
-
+See /config/component-types.yaml
 
 ---
 
-## two-position-valve
+## version
+
+**Required:** Yes
+
+**Data Type:** Integer
 
 **Description**
 
-A valve with two discrete positions, typically open or closed.
+Configuration schema version.
 
-### Typical Points
+**Example**
 
-* position
-
-### Optional Points
-
-* command
-* fault
+```yaml
+version: 1
+```
 
 ---
 
-## co2-sensor
+## component-types
+
+**Required:** Yes
+
+**Data Type:** List
 
 **Description**
 
-Measures carbon dioxide concentration.
-
-### Typical Points
-
-* process-value
-
-### Optional Points
-
-* set-point
-* high-alarm
-* sensor-fault
-
----
-
-## cooling-coil
-
-**Description**
-
-A cooling coil used to reduce air temperature.
-
-### Typical Points
-
-None.
-
-### Optional Points
-
-* inlet-temperature
-* outlet-temperature
-* valve-position
-* condensation-alarm
-
----
-
-## damper
-
-**Description**
-
-A motorised air damper.
-
-### Typical Points
-
-* position
-
-### Optional Points
-
-* command
-* open
-* closed
-* fault
-
----
-
-## fan
-
-**Description**
-
-A fan supplying conditioned air to a ventilation system.
-
-### Typical Points
-
-* running
-
-### Optional Points
-
-* command
-* speed
-* fault
-* hours-run
-* start-count
-
----
-
-## filter
-
-**Description**
-
-An air filter used within a ventilation system.
-
-### Typical Points
-
-* dirty
-
-### Optional Points
-
-* pressure-drop
-* warning
-* alarm
-
----
-
-## heat-exchanger
-
-**Description**
-
-Transfers heat between two separate air or water streams.
-
-### Typical Points
-
-None.
-
-### Optional Points
-
-* efficiency
-* bypass-position
-* frost-alarm
-
----
-
-## heating-coil
-
-**Description**
-
-A heating coil used to raise air temperature.
-
-### Typical Points
-
-None.
-
-### Optional Points
-
-* inlet-temperature
-* outlet-temperature
-* valve-position
-* frost-alarm
-
----
-
-## humidity-sensor
-
-**Description**
-
-Measures relative humidity.
-
-### Typical Points
-
-* process-value
-
-### Optional Points
-
-* set-point
-* high-alarm
-* low-alarm
-* sensor-fault
-
----
-
-## mixing-valve
-
-**Description**
-
-A modulating valve used to control the temperature of a water circuit.
-
-### Typical Points
-
-* position
-
-### Optional Points
-
-* command
-* fault
-* manual-mode
-
----
-
-## pressure-sensor
-
-**Description**
-
-Measures the pressure of air or water.
-
-### Typical Points
-
-* process-value
-
-### Optional Points
-
-* set-point
-* high-alarm
-* low-alarm
-* sensor-fault
-
----
-
-## temperature-sensor
-
-**Description**
-
-Measures the temperature of air, water or another medium.
-
-### Typical Points
-
-* process-value
-
-### Optional Points
-
-* set-point
-* high-alarm
-* low-alarm
-* sensor-fault
-
+List of available component types.
+
+**Example**
+
+```yaml
+component-types:
+  - type: temperature-sensor
+
+    description: Measures temperature.
+
+    roles:
+      - supply-air
+      - extract-air
+      - outdoor-air
+      - exhaust-air
+      - room
+      - flow
+      - return
+      - cylinder
+
+    typical-points:
+      - process-value
+      - set-point
+      - high-alarm
+      - low-alarm
+      - sensor-fault
+
+```
 ---
 
 <a id="point-types"></a>
