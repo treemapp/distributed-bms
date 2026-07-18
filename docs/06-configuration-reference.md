@@ -10,10 +10,14 @@ Configuration files should remain human-readable, easy to maintain and suitable 
 
 This document describes the purpose and meaning of each configuration field. It does not describe runtime behaviour.
 
-
 ---
 
-# Configuration File Types
+### Configuration File Types
+
+- [interface.yaml](#interfaceyaml)
+- [system.yaml](#systemyaml)
+- [component-types.yaml](#component-typesyaml)
+- [point-types.yaml](#point-typesyaml)
 
 The platform currently defines the following configuration files:
 
@@ -32,22 +36,35 @@ Additional configuration files may be introduced in future releases.
 
 A Node may contain:
 
+```text
 config/
-
-  interfaces/
-      cabinet-1.yaml
-      cabinet-2.yaml
-      chiller-plant.yaml
-
-  systems/
-      ahu-1.yaml
-      ahu-2.yaml
-      heating.yaml
-      chilled-water.yaml
-
+├── interfaces/
+│   ├── cabinet-1.yaml
+│   ├── cabinet-2.yaml
+│   └── chiller-plant.yaml
+└── systems/
+    ├── ahu-1.yaml
+    ├── ahu-2.yaml
+    ├── heating.yaml
+    └── chilled-water.yaml
+```
 ---
 
 # Interface configuration file (interface-name.yaml)
+
+## Contents
+
+- [Purpose](#purpose)
+- [version](#version)
+- [name](#name)
+- [description](#description)
+- [driver](#driver)
+- [address](#address)
+- [authentication](#authentication)
+- [scan-interval-ms](#scan-interval-ms)
+- [variables](#variables)
+
+---
 
 ## Purpose
 
@@ -245,6 +262,21 @@ The mapping between PLC variables and Points is defined by the System configurat
 ---
 
 # System configuration file (system-name.yaml)
+
+## Contents
+
+- [Purpose](#purpose-1)
+- [version](#version-1)
+- [name](#name-1)
+- [description](#description-1)
+- [category](#category)
+- [interface](#interface)
+- [components](#components)
+- [status](#status)
+- [schedule](#schedule)
+- [alarms](#alarms)
+
+---
 
 ## Purpose
 
@@ -453,9 +485,36 @@ This section will be documented in a future revision.
 
 (Documentation to be completed.)
 
+## Contents
+
+- [Purpose](#purpose-2)
+- [version](#version-2)
+- [component-type](#component-type)
+- [description](#description-2)
+- [point-types](#point-types)
+- [symbol](#symbol)
+- [defaults](#defaults)
+
 ---
 
 # Point types configuration file (point-types.yaml)
+
+(Documentation to be completed.)
+
+## Contents
+
+- [Purpose](#purpose-3)
+- [version](#version-3)
+- [point-type](#point-type)
+- [description](#description-3)
+- [data-type](#data-type)
+- [units](#units)
+- [display-format](#display-format)
+- [read-only](#read-only)
+
+---
+
+# Status definitions configuration file (status-definitions.yaml)
 
 (Documentation to be completed.)
 
