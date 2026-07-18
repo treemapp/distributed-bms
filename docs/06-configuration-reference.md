@@ -14,10 +14,10 @@ This document describes the purpose and meaning of each configuration field. It 
 
 ### Configuration File Types
 
-- [interface.yaml](#interfaceyaml)
-- [system.yaml](#systemyaml)
-- [component-types.yaml](#component-typesyaml)
-- [point-types.yaml](#point-typesyaml)
+- [interface-name.yaml](#interface-name)
+- [system-name.yaml](#system-name)
+- [component-types.yaml](#component-types)
+- [point-types.yaml](#point-types)
 
 The platform currently defines the following configuration files:
 
@@ -49,6 +49,8 @@ config/
     └── chilled-water.yaml
 ```
 ---
+
+<a id="interface-name"></a>
 
 # Interface configuration file (interface-name.yaml)
 
@@ -260,6 +262,8 @@ variables:
 The mapping between PLC variables and Points is defined by the System configuration.
 
 ---
+
+<a id="system-name"></a>
 
 # System configuration file (system-name.yaml)
 
@@ -481,6 +485,8 @@ This section will be documented in a future revision.
 
 ---
 
+<a id="component-types"></a> 
+
 # Component types configuration file (component-types.yaml)
 
 (Documentation to be completed.)
@@ -496,6 +502,8 @@ This section will be documented in a future revision.
 - [defaults](#defaults)
 
 ---
+
+<a id="point-types"></a>
 
 # Point types configuration file (point-types.yaml)
 
