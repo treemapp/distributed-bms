@@ -64,7 +64,7 @@ config/
 - [address](#address)
 - [authentication](#authentication)
 - [scan-interval-ms](#scan-interval-ms)
-- [variables](#variables)
+- [sources](#sources)
 
 ---
 
@@ -74,7 +74,7 @@ Interface configuration files define communication between a Node and one or mor
 
 It contains communication settings and point mappings.
 
-It is the only configuration file that has knowledge of PLC-specific variables.
+It is the only configuration file that has knowledge of e.g. PLC-specific variables or an API response member.
 
 ---
 
@@ -235,7 +235,7 @@ scan-interval-ms: 1000
 
 ---
 
-## variables
+## sources
 
 **Required:** Yes
 
@@ -243,14 +243,14 @@ scan-interval-ms: 1000
 
 **Description**
 
-Defines the PLC variables that are made available to the Node.
+Defines the specific data points, e.g. PLC variables, that are made available to the Node.
 
-Each variable requires a unique identifier.
+Each source requires a unique identifier.
 
 **Example:**
 
 ```yaml
-variables:
+sources:
 
   - id: 1411_LB11_GT21_PV
     description: Supply air temperature
@@ -259,7 +259,7 @@ variables:
     description: Supply air temperature set point
 ```
 
-The mapping between PLC variables and Points is defined by the System configuration.
+The mapping between sources, e.g. PLC variables, and Points is defined by the System configuration.
 
 ---
 
@@ -406,7 +406,7 @@ Defines the Components that make up the System.
 
 Each Component references a Component Type defined in the component catalogue.
 
-The mapping between Component Points and PLC Variables is defined within each Component.
+The mapping between Component Points and e.g. PLC Variables is defined within each Component.
 
 **Example**
 
@@ -420,16 +420,16 @@ components:
     points:
 
       command:
-        variable: TF1_CMD
+        source: TF1_CMD
 
       running:
-        variable: TF1_RUN
+        source: TF1_RUN
 
       speed:
-        variable: TF1_SPEED
+        source: TF1_SPEED
 
       fault:
-        variable: TF1_FAULT
+        source: TF1_FAULT
 
   - name: ff1
     type: fan
@@ -438,16 +438,16 @@ components:
     points:
 
       command:
-        variable: FF1_CMD
+        source: FF1_CMD
 
       running:
-        variable: FF1_RUN
+        source: FF1_RUN
 
       speed:
-        variable: FF1_SPEED
+        source: FF1_SPEED
 
       fault:
-        variable: FF1_FAULT
+        source: FF1_FAULT
 
   - name: gt11
     type: temperature-sensor
@@ -456,16 +456,16 @@ components:
     points:
 
       process-value:
-        variable: GT11_PV
+        source: GT11_PV
 
       set-point:
-        variable: GT11_SP
+        source: GT11_SP
 
       high-alarm:
-        variable: GT11_HI
+        source: GT11_HI
 
       low-alarm:
-        variable: GT11_LO
+        source: GT11_LO
 ```
 
 ---
@@ -548,7 +548,7 @@ The Component Type Catalogue defines the reusable physical components available 
 
 Each Component Type represents a physical device or piece of equipment and defines the Point Types that it may expose.
 
-System configuration files instantiate Component Types and map their Points to PLC Variables.
+System configuration files instantiate Component Types and map their Points to e.g. PLC Variables.
 
 Control strategies, such as weather compensation, PID control and frost protection, are not Component Types. These are modelled separately.
 
