@@ -286,7 +286,7 @@ The mapping between sources, e.g. PLC variables, and Points is defined by the Sy
 
 A System configuration file defines a single logical building system.
 
-Examples include an air handling unit (AHU), heating system, chilled water system or domestic hot water system.
+Examples include an air handling unit (AHU), heating system, chilled water system or hot water system.
 
 A Node may contain one or more System configuration files.
 
@@ -295,6 +295,7 @@ Each System references one or more Components and the Interface through which th
 Structure:
 ```text
 System
+    Interface
     Components
         type
         role
@@ -375,7 +376,7 @@ Examples include:
 * air-handling
 * heating
 * chilled-water
-* domestic-hot-water
+* hot-water
 * lighting
 
 **Example**
