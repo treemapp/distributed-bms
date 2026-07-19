@@ -417,13 +417,55 @@ components:
     type: fan
     role: supply-air
 
+    points:
+
+      command:
+        variable: TF1_CMD
+
+      running:
+        variable: TF1_RUN
+
+      speed:
+        variable: TF1_SPEED
+
+      fault:
+        variable: TF1_FAULT
+
   - name: ff1
     type: fan
     role: extract-air
 
+    points:
+
+      command:
+        variable: FF1_CMD
+
+      running:
+        variable: FF1_RUN
+
+      speed:
+        variable: FF1_SPEED
+
+      fault:
+        variable: FF1_FAULT
+
   - name: gt11
     type: temperature-sensor
     role: supply-air
+
+    points:
+
+      process-value:
+        variable: GT11_PV
+
+      set-point:
+        variable: GT11_SP
+
+      high-alarm:
+        variable: GT11_HI
+
+      low-alarm:
+        variable: GT11_LO
 ```
 
 ---
@@ -498,7 +540,6 @@ This section will be documented in a future revision.
 
 - [Purpose](#purpose-2)
 - [version](#version-2)
-- [description](#description-2)
 - [component-types](#component-types)
 
 ## Purpose
@@ -511,7 +552,7 @@ System configuration files instantiate Component Types and map their Points to P
 
 Control strategies, such as weather compensation, PID control and frost protection, are not Component Types. These are modelled separately.
 
-See /config/component-types.yaml
+See /catalogues/component-types.yaml
 
 ---
 
