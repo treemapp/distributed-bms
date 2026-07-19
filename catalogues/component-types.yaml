@@ -2,7 +2,6 @@ version: 1
 
 component-types:
 
-  - 
   - type: actuator
     description: Motor for actuating dampers or valves.
     roles:
