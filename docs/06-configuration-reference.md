@@ -292,6 +292,16 @@ A Node may contain one or more System configuration files.
 
 Each System references one or more Components and the Interface through which their Points are obtained.
 
+Structure:
+```text
+System
+    Components
+        type
+        role
+        Points
+            source
+```
+
 ---
 
 ## version
