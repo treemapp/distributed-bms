@@ -2,45 +2,21 @@ version: 1
 
 component-types:
 
-  - type: co2-sensor
-
-    description: Measures carbon dioxide concentration.
-
+  - 
+  - type: actuator
+    description: Motor for actuating dampers or valves.
     roles:
-      - supply-air
-      - extract-air
-      - room
-      - return-air
-
-    typical-points:
-      - process-value
-      - set-point
-      - high-alarm
-      - sensor-fault
-
-  - type: cooling-coil
-
-    description: Air cooling coil.
-
-    roles:
-      - supply-air
-
-    typical-points:
-      - valve-position
-      - inlet-temperature
-      - outlet-temperature
-      - condensation-alarm
-
-  - type: damper
-
-    description: Motorised air damper.
-
-    roles:
-      - outdoor-air
-      - exhaust-air
-      - recirculation
-      - bypass
-
+      - valve
+      - heating-valve
+      - cooling-valve
+      - damper
+      - outdoor-air-damper
+      - exhaust-air-damper
+      - supply-air-damper
+      - extract-air-damper
+      - fire-damper
+      - by-pass-damper
+      - recirculation-damper
     typical-points:
       - command
       - position
@@ -49,15 +25,13 @@ component-types:
       - fault
 
   - type: fan
-
     description: Air handling fan.
-
     roles:
       - supply-air
       - extract-air
       - exhaust-air
+      - circulation-air
       - return-air
-
     typical-points:
       - command
       - running
@@ -67,57 +41,24 @@ component-types:
       - start-count
       - power
 
-  - type: filter
-
-    description: Air filter.
-
-    roles:
-      - supply-air
-      - extract-air
-      - outdoor-air
-
-    typical-points:
-      - dirty
-      - pressure-drop
-      - warning
-      - alarm
-
   - type: heat-exchanger
-
     description: Heat recovery heat exchanger.
-
     roles:
       - rotary
       - plate
       - run-around
-
     typical-points:
+      - command
+      - fault
       - bypass-position
       - efficiency
-      - frost-alarm
-
-  - type: heating-coil
-
-    description: Air heating coil.
-
-    roles:
-      - supply-air
-
-    typical-points:
-      - valve-position
-      - inlet-temperature
-      - outlet-temperature
-      - frost-alarm
 
   - type: humidity-sensor
-
     description: Measures relative humidity.
-
     roles:
       - room
       - supply-air
       - extract-air
-
     typical-points:
       - process-value
       - set-point
@@ -126,9 +67,7 @@ component-types:
       - sensor-fault
 
   - type: pressure-sensor
-
     description: Measures air or water pressure.
-
     roles:
       - supply-air
       - extract-air
@@ -144,16 +83,13 @@ component-types:
       - sensor-fault
 
   - type: pump
-
-    description: Water circulation pump.
-
+    description: Pump for hydronic circuits or evacuation.
     roles:
       - heating
       - chilled-water
       - condenser
       - hot-water
       - heat-recovery
-
     typical-points:
       - command
       - running
@@ -165,9 +101,7 @@ component-types:
       - power
 
   - type: temperature-sensor
-
     description: Measures temperature.
-
     roles:
       - supply-air
       - extract-air
@@ -177,37 +111,9 @@ component-types:
       - flow
       - return
       - cylinder
-
     typical-points:
       - process-value
       - set-point
       - high-alarm
       - low-alarm
       - sensor-fault
-
-  - type: three-position-valve
-
-    description: Three-position motorised valve.
-
-    roles:
-      - heating
-      - cooling
-
-    typical-points:
-      - open-command
-      - close-command
-      - position
-      - fault
-
-  - type: two-position-valve
-
-    description: Two-position motorised valve.
-
-    roles:
-      - heating
-      - cooling
-
-    typical-points:
-      - command
-      - position
-      - fault
