@@ -95,7 +95,7 @@ def poll_webport(config):
     return data
 
 
-def poll_external_api(interface_name):
+def poll_interface(interface_name):
     config = interface_configs.get(interface_name)
     if not config:
         raise ValueError(f"Unrecognised config {interface_name}")
@@ -115,7 +115,7 @@ def poll_loop(interface_name, interval, stop_event):
     while not stop_event.is_set():
         try:
             print(f"[{timestamp()}] polling {interface_name}")
-            data = poll_external_api(interface_name)
+            data = poll_interface(interface_name)
             with lock:
                 last_result[interface_name] = data
                 for q in interface_clients.get(interface_name, []):

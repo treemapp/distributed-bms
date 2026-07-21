@@ -1,0 +1,68 @@
+version: 1
+name: EMS Heating
+interface: ems-esp
+components:
+  - name: Outdoor
+    type: temperature-sensor
+    role: outdoor-air
+    points:
+      process-value:  
+        source: boiler.outdoortemp
+        label: Outdoor temperature
+        units: °C
+  - name: Indoor
+    type: temperature-sensor
+    role: room
+    points:
+      set-point: 
+        source: thermostat.hc1.seltemp
+        label: Set point
+        units: °C
+      process-value: 
+        source: thermostat.hc1.currtemp
+        label: Process value
+        units: °C
+  - name: Hot Water
+    type: temperature-sensor
+    role: cylinder
+    points:
+      set-point: 
+        source: boiler.dhw.settemp
+        label: Set point
+        units: °C
+      process-value: 
+        source: boiler.dhw.curtemp
+        label: Internal temperature
+        units: °C
+  - name: TC0
+    type: temperature-sensor
+    role: return
+    points:
+      process-value: 
+        source: boiler.hptc0
+        label: Heat carrier return
+        units: °C
+  - name: TC3
+    type: temperature-sensor
+    #role: condensor
+    points:
+      process-value: 
+        source: boiler.hptc3
+        label: Condensor
+        units: °C
+  - name: TR4
+    type: temperature-sensor
+    #role: condensor
+    points:
+      process-value: 
+        source: boiler.hptr4
+        label: Evaporator inlet
+        units: °C
+  - name: TR6
+    type: temperature-sensor
+    #role: condensor
+    points:
+      process-value: 
+        source: boiler.hptr6
+        label: Compressor outlet
+        units: °C

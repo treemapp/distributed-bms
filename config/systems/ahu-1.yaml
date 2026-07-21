@@ -1,0 +1,39 @@
+version: 1
+name: AHU-1
+interface: simulator
+components:
+  - name: tf1
+    type: fan
+    role: supply-air
+    points:
+      command: 
+        source: TF1_CMD
+        label: Start order
+      running: 
+        source: TF1_OP
+        label: Output - request
+        units: '%'
+      feedback: 
+        source: TF1_PV
+        label: Output - actual
+        units: '%'
+  - name: gt11
+    type: temperature-sensor
+    role: supply-air
+    points:
+      process-value: 
+        source: GT11_PV
+        label: Process value
+        units: °C
+      set-point: 
+        writable: true
+        source: GT11_SP
+        label: Set point
+        units: °C
+      high-alarm:
+        source: GT11_HIGH_FAULT
+      low-alarm:
+        source: GT11_LOW_FAULT
+      sensor-fault:
+        source: GT11_SENSOR_ERROR_FAULT
+
