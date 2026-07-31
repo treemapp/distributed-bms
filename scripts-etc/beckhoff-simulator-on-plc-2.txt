@@ -1,0 +1,25 @@
+PROGRAM MAIN
+
+VAR
+    PV : REAL;
+    SetPoint : REAL;
+    RampRate : REAL;
+    Run : BOOL;
+    Initialised : BOOL;
+END_VAR
+
+IF NOT Initialised THEN
+    PV := 0.0;
+    SetPoint := 50.0;
+    RampRate := 0.1;
+    Run := TRUE;
+    Initialised := TRUE;
+END_IF;
+
+IF Run THEN
+    IF PV < SetPoint THEN
+        PV := PV + RampRate;
+    ELSIF PV > SetPoint THEN
+        PV := PV - RampRate;
+    END_IF;
+END_IF;

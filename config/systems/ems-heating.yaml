@@ -1,6 +1,11 @@
 version: 1
 name: EMS Heating
 interface: ems-esp
+status:
+  enabled: 
+    source: boiler.heatingactivated
+  running:
+    source: boiler.heatingpump # change to compressor?
 components:
   - name: Outdoor
     type: temperature-sensor
@@ -36,7 +41,7 @@ components:
         units: °C
   - name: TC0
     type: temperature-sensor
-    role: return
+    #role: return
     points:
       process-value: 
         source: boiler.hptc0

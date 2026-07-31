@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+
+# IDEs
+#.vscode/
+#.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local interface configs
+config/interfaces/local/
+config/interfaces/private/
+
+# Local configuration
+config/local/
+
+# Test data
+test-data/
+
+# Temporary files
+tmp/
+logs/
+
+# Logs
+*.log

@@ -1,0 +1,26 @@
+version: 1
+
+name: cabinet-1
+
+driver: beckhoff-ads
+
+ip-address: 192.168.0.208
+ams-net-id: 5.2.78.118.1.1
+port: 801 # 801 TC2 851 TC3
+
+scan-interval-ms: 5000
+
+sources:
+
+  - id: GT11_PV
+    symbol: MAIN.PV
+
+  - id: GT11_SP
+    symbol: MAIN.SetPoint
+    writable: true
+
+  - id: TF1_OP
+    symbol: MAIN.Run
+
+#  - id: TF1_PV
+#    symbol: MAIN.tf1_feedback

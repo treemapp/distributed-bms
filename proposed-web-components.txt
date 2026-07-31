@@ -1,0 +1,53 @@
+static/
+
+    index.html
+
+    components/
+        dbms-point.js
+        dbms-component.js
+        dbms-alarm-list.js
+        dbms-drawing.js
+        dbms-trend.js
+        dbms-navigation.js
+
+    lib/
+        api.js
+        system.js
+        formatting.js
+
+Web Components
+    ↑
+Bootstrap CSS
+    ↑
+Browser
+
+Each Web Component simply emits Bootstrap-compatible HTML:
+
+<div class="card">
+    ...
+</div>
+
+or
+
+<table class="table table-sm">
+
+No jQuery.
+
+No Bootstrap JS.
+
+e.g. Set point
+<div class="form-group">
+    <label>Set point</label>
+    <input class="form-control">
+</div>
+
+e.g. header
+<div class="card">
+  <div class="card-header">
+    Supply Air Fan
+  </div>
+
+  <div class="card-body">
+    ...
+  </div>
+</div>

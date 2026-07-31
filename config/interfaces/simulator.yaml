@@ -1,0 +1,22 @@
+version: 1
+name: simulator
+driver: simulator
+scan-interval-ms: 1000
+sources:
+  - id: TF1_CMD
+    initial: true
+  - id: TF1_OP
+    initial: 75
+  - id: TF1_PV
+    initial: 75
+  - id: GT11_PV
+    initial: 18.0
+  - id: GT11_SP
+    initial: 20.0
+    writable: true
+  - id: GT11_HIGH_FAULT
+    initial: false
+  - id: GT11_LOW_FAULT
+    initial: false
+  - id: GT11_SENSOR_ERROR_FAULT
+    initial: false

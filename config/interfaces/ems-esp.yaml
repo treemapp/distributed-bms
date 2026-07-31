@@ -1,0 +1,31 @@
+version: 1
+name: ems-esp
+driver: ems-esp
+address: http://ems-esp.local
+scan-interval-ms: 5000
+endpoints:
+  boiler:
+    path: /api/boiler
+  thermostat:
+    path: /api/thermostat
+sources:
+  - id: boiler.heatingactivated
+    description: System permitted
+  - id: boiler.outdoortemp
+  - id: boiler.curflowtemp
+  - id: boiler.heatingpump
+  - id: boiler.dhw.settemp
+  - id: boiler.dhw.curtemp
+    description: Tank internal temperature
+  - id: boiler.dhw.curtemp2
+    description: Tank external temperature
+  - id: boiler.hptc0
+  - id: boiler.hptc3
+  - id: boiler.hptr4
+  - id: boiler.hptr6
+  - id: thermostat.hc1.currtemp
+  - id: thermostat.hc1.seltemp
+    writable: true
+  - id: thermostat.hc1.targetflowtemp
+  - id: thermostat.hc1.mode
+

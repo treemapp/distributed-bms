@@ -6,6 +6,11 @@ class Driver:
     def __init__(self, config):
 
         print("ADS Creating connection")
+        self.sources = {
+            source["id"]: source
+            for source in config.get("sources", [])
+        }
+
         self.plc = pyads.Connection(
             config["ams-net-id"],
             config.get("port", 851),
@@ -19,10 +24,7 @@ class Driver:
             self.plc.open()
 
             print(f"ADS Opened")
-            self.sources = {
-                source["id"]: source
-                for source in config["sources"]
-            }
+
         except Exception as e:
             raise ConnectionError (
                 f"Unable to connect to {config['name']}: {e}"
@@ -31,6 +33,7 @@ class Driver:
     def read(self):
 
         try:
+            print("ADS Reading")
             values = {}
 
             for source in self.sources.values():
@@ -49,6 +52,7 @@ class Driver:
     def write(self, source, value):
 
         try:
+            print("ADS Writing")
             cfg = self.sources[source]
 
             if not cfg.get("writable", False):
@@ -57,6 +61,7 @@ class Driver:
             self.plc.write_by_name(
                 cfg["symbol"],
                 value,
+                #pyads.PLCTYPE_REAL
             )
         except Exception as e:
             raise RuntimeError(
