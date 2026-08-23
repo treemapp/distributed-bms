@@ -1,0 +1,42 @@
+using DistributedBms.Configuration;
+using Microsoft.AspNetCore.Mvc;
+
+namespace DistributedBms.Api;
+
+[ApiController]
+[Route("api")]
+public class ConfigController : ControllerBase
+{
+    private readonly ConfigurationLoader _configurationLoader;
+
+    public ConfigController(ConfigurationLoader configurationLoader)
+    {
+        _configurationLoader = configurationLoader;
+    }
+
+    [HttpGet("interfaces/{name}")]
+    public IActionResult GetInterface(string name)
+    {
+        try
+        {
+            return Ok(_configurationLoader.GetInterface(name));
+        }
+        catch (FileNotFoundException)
+        {
+            return NotFound();
+        }
+    }
+
+    [HttpGet("systems/{name}")]
+    public IActionResult GetSystem(string name)
+    {
+        try
+        {
+            return Ok(_configurationLoader.GetSystem(name));
+        }
+        catch (FileNotFoundException)
+        {
+            return NotFound();
+        }
+    }
+}

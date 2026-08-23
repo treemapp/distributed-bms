@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "xEMhQHbV2Mo=",
+  "success": true,
+  "projectFilePath": "/home/paul/dev/buildings/distributed-bms/distributed-bms/src/DistributedBms/DistributedBms.csproj",
+  "expectedPackageFiles": [
+    "/home/paul/.nuget/packages/yamldotnet/18.1.0/yamldotnet.18.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

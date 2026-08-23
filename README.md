@@ -8,6 +8,8 @@ Simulator ✔
 EMS-ESP ✔
 Beckhoff ADS ✔ (prototype)
 
+Decision has been made to develop project in C# and targeting Windows.
+
 ## Project development
 
 The project is being developed with the assistance of OpenAI's ChatGPT.

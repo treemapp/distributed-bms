@@ -15,11 +15,11 @@ Validated:
 ✔ Simulator
 ✔ EMS-ESP
 ✔ Beckhoff ADS read
-✔ Beckhoff ADS write (requires further investigation)
+✔ Beckhoff ADS write
+✔ Beckhoff Windows service
 
 Next milestones:
 - Alarm engine
 - Historian
-- Beckhoff Windows service
 - Modbus TCP driver
 - SAIA S-Bus driver
