@@ -1,6 +1,10 @@
 # windows
 windows/
 
+src/DistributedBms/bin
+src/DistributedBms/obj
+
+
 # IDEs
 #.vscode/
 #.idea/
