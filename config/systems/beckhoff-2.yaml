@@ -1,0 +1,30 @@
+version: 1
+name: Beckhoff-1
+interface: beckhoff-2 #cabinet-1
+components:
+  - name: tf1
+    type: fan
+    role: supply-air
+    points:
+      running: 
+        source: RUN
+        label: Output - request
+#        units: '%'
+#      feedback: 
+#        source: TF1_PV
+#        label: Output - actual
+#        units: '%'
+  - name: gt11
+    type: temperature-sensor
+    role: supply-air
+    points:
+      set-point: 
+        writable: true
+        source: SETPOINT
+        label: Set point
+        units: °C
+      process-value: 
+        source: PV
+        label: Process value
+        units: °C
+

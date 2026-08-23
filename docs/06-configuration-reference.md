@@ -88,12 +88,29 @@ It is the only configuration file that has knowledge of e.g. PLC-specific variab
 
 Unique name of the interface.
 
+Referred to by Systems.
+
 The name shall be unique within the site.
+
+IMPORTANT! The interface name must match the interface YAML filename, excluding the .yaml extension.
 
 **Examples:**
 
 ```yaml
 name: cabinet-1
+```
+
+### Interface name and filename
+
+The `name` property must match the interface configuration filename,
+excluding the `.yaml` extension.
+
+For example:
+
+`interfaces/ahu-1.yaml`
+
+```yaml
+name: ahu-1
 ```
 
 ---

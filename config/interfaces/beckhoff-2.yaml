@@ -1,0 +1,29 @@
+version: 1
+name: beckhoff-2
+driver: beckhoff-ads
+ip-address: 192.168.0.208
+ams-net-id: 5.2.78.118.1.1
+port: 801
+scan-interval-ms: 1000
+sources:
+- id: COUNTER
+  symbol: MAIN.COUNTER
+  type: DWORD
+- id: INITIALISED
+  symbol: MAIN.INITIALISED
+  type: BOOL
+- id: PV
+  symbol: MAIN.PV
+  type: REAL
+- id: RAMPRATE
+  symbol: MAIN.RAMPRATE
+  type: REAL
+- id: RUN
+  symbol: MAIN.RUN
+  type: BOOL
+- id: SETPOINT
+  symbol: MAIN.SETPOINT
+  type: REAL
+- id: VALUE
+  symbol: MAIN.VALUE
+  type: REAL

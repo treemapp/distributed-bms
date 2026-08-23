@@ -1,0 +1,11 @@
+import pyads
+plc = pyads.Connection('5.2.78.118.1.1', 801, '192.168.0.208')
+plc.open()
+plc.get_all_symbols()
+<pyads.symbol.AdsSymbol object at 0x7fbbe941f350, name: MAIN.COUNTER, type: DWORD>, 
+<pyads.symbol.AdsSymbol object at 0x7fbbe8f07310, name: MAIN.INITIALISED, type: BOOL>, 
+<pyads.symbol.AdsSymbol object at 0x7fbbe8f05f90, name: MAIN.PV, type: REAL>, 
+<pyads.symbol.AdsSymbol object at 0x7fbbe8f05fd0, name: MAIN.RAMPRATE, type: REAL>, 
+<pyads.symbol.AdsSymbol object at 0x7fbbe8f07350, name: MAIN.RUN, type: BOOL>, 
+<pyads.symbol.AdsSymbol object at 0x7fbbe8f07e50, name: MAIN.SETPOINT, type: REAL>, 
+<pyads.symbol.AdsSymbol object at 0x7fbbe8f07f50, name: MAIN.VALUE, type: REAL>
