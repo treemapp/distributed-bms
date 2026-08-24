@@ -24,14 +24,12 @@ public class PollingService
     {
         var config = _configurationLoader.GetInterface(interfaceName);
 
-        var name = GetRequiredString(config, "name");
-
         lock (_lock)
         {
-            if (!_sessions.TryGetValue(name, out var session))
+            if (!_sessions.TryGetValue(config.Name, out var session))
             {
                 session = StartSession(config);
-                _sessions[name] = session;
+                _sessions[config.Name] = session;
             }
 
             var channel = Channel.CreateUnbounded<object>();
@@ -50,15 +48,9 @@ public class PollingService
         }
     }
 
-    private PollingSession StartSession(
-        Dictionary<string, object?> config)
+    private PollingSession StartSession(InterfaceConfig config)
     {
-        var driverName = GetRequiredString(config, "driver");
-
-        var driver = _driverFactory.Create(
-            driverName,
-            config
-        );
+        var driver = _driverFactory.Create(config.Driver);
 
         var session = new PollingSession(
             config,
@@ -75,12 +67,7 @@ public class PollingService
     private async Task PollLoopAsync(PollingSession session)
     {
         var interval = TimeSpan.FromMilliseconds(
-            GetScanIntervalMs(session.Config)
-        );
-
-        var name = GetRequiredString(
-            session.Config,
-            "name"
+            session.Config.ScanIntervalMs
         );
 
         try
@@ -104,7 +91,7 @@ public class PollingService
                 catch (Exception ex)
                 {
                     Console.WriteLine(
-                        $"Polling error for {name}: {ex.Message}"
+                        $"Polling error for {session.Config.Name}: {ex.Message}"
                     );
                 }
 
@@ -133,46 +120,14 @@ public class PollingService
             if (session.Clients.Count == 0)
             {
                 session.CancellationTokenSource.Cancel();
-
-                var name = GetRequiredString(
-                    session.Config,
-                    "name"
-                );
-
-                _sessions.Remove(name);
+                _sessions.Remove(session.Config.Name);
             }
         }
     }
 
-    private static string GetRequiredString(
-        Dictionary<string, object?> config,
-        string key)
-    {
-        return config[key]?.ToString()
-            ?? throw new InvalidOperationException(
-                $"Configuration is missing required field '{key}'"
-            );
-    }
-
-    private static int GetScanIntervalMs(
-        Dictionary<string, object?> config)
-    {
-        if (!config.TryGetValue(
-                "scan-interval-ms",
-                out var value) ||
-            value == null)
-        {
-            throw new InvalidOperationException(
-                "Configuration is missing required field 'scan-interval-ms'"
-            );
-        }
-
-        return Convert.ToInt32(value);
-    }
-
     internal class PollingSession
     {
-        public Dictionary<string, object?> Config { get; }
+        public InterfaceConfig Config { get; }
         public IPlcDriver Driver { get; }
 
         public object? LastResult { get; set; }
@@ -186,7 +141,7 @@ public class PollingService
             = new();
 
         public PollingSession(
-            Dictionary<string, object?> config,
+            InterfaceConfig config,
             IPlcDriver driver)
         {
             Config = config;

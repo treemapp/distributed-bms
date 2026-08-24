@@ -1,3 +1,18 @@
+/*
+ConfigurationLoader
+└── _cache
+    ├── "interfaces/simulator"
+    │     └── Dictionary<string, object>
+    │           ├── version
+    │           ├── name
+    │           ├── driver
+    │           ├── scan-interval-ms
+    │           └── sources
+    │
+    └── "systems/building-1"
+          └── Dictionary<string, object>
+                └── ...
+*/
 using Microsoft.Extensions.Configuration;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
@@ -7,7 +22,7 @@ namespace DistributedBms.Configuration;
 public class ConfigurationLoader
 {
     private readonly string _configDirectory;
-    private readonly Dictionary<string, object> _cache = new();
+    private readonly Dictionary<string, object?> _cache = new();
     private readonly IDeserializer _deserializer;
 
     public ConfigurationLoader(IConfiguration configuration)
@@ -18,52 +33,41 @@ public class ConfigurationLoader
             );
 
         _deserializer = new DeserializerBuilder()
-            .WithNamingConvention(UnderscoredNamingConvention.Instance)
-            .IgnoreUnmatchedProperties()
+            .WithNamingConvention(HyphenatedNamingConvention.Instance)
             .Build();
     }
 
-    public InterfaceConfig GetInterface(string name)
+    public Dictionary<string, object?> GetInterface(string name)
     {
-        var cacheKey = $"interfaces/{name}";
+        var config = GetConfig("interfaces", name);
 
-        if (_cache.TryGetValue(cacheKey, out var cached))
-            return (InterfaceConfig)cached;
-
-        var path = Path.Combine(
-            _configDirectory,
-            "interfaces",
-            $"{name}.yaml"
-        );
-
-        if (!File.Exists(path))
-            throw new FileNotFoundException(
-                $"Configuration file not found: {path}"
+        if (!config.ContainsKey("name") ||
+            !config.ContainsKey("driver"))
+        {
+            throw new InvalidOperationException(
+                $"Missing required config fields in {name}.yaml"
             );
-
-        var yaml = File.ReadAllText(path);
-
-        var config = _deserializer.Deserialize<InterfaceConfig>(yaml)
-            ?? throw new InvalidOperationException(
-                $"Could not deserialize interface configuration: {name}"
-            );
-
-        _cache[cacheKey] = config;
+        }
 
         return config;
     }
 
-    public object GetSystem(string name)
+    public Dictionary<string, object?> GetSystem(string name)
     {
         return GetConfig("systems", name);
     }
 
-    private object GetConfig(string directory, string name)
+    private Dictionary<string, object?> GetConfig(
+        string directory,
+        string name)
     {
         var cacheKey = $"{directory}/{name}";
 
-        if (_cache.TryGetValue(cacheKey, out var cached))
-            return cached;
+        if (_cache.TryGetValue(cacheKey, out var cached) &&
+            cached is Dictionary<string, object?> cachedConfig)
+        {
+            return cachedConfig;
+        }
 
         var path = Path.Combine(
             _configDirectory,
@@ -78,7 +82,8 @@ public class ConfigurationLoader
 
         var yaml = File.ReadAllText(path);
 
-        var config = _deserializer.Deserialize<object>(yaml)
+        Dictionary<string, object?> config = _deserializer
+            .Deserialize<Dictionary<string, object?>>(yaml)
             ?? throw new InvalidOperationException(
                 $"Could not deserialize configuration: {name}"
             );
@@ -88,4 +93,3 @@ public class ConfigurationLoader
         return config;
     }
 }
-
