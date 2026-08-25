@@ -30,3 +30,13 @@
 /home/paul/dev/buildings/distributed-bms/distributed-bms/src/DistributedBms/bin/Debug/net10.0/YamlDotNet.dll
 /home/paul/dev/buildings/distributed-bms/distributed-bms/src/DistributedBms/obj/Debug/net10.0/DistributedBms.csproj.AssemblyReference.cache
 /home/paul/dev/buildings/distributed-bms/distributed-bms/src/DistributedBms/obj/Debug/net10.0/Distribu.EDEE8BC7.Up2Date
+/home/paul/dev/buildings/distributed-bms/distributed-bms/src/DistributedBms/bin/Debug/net10.0/TwinCAT.Ads.dll
+/home/paul/dev/buildings/distributed-bms/distributed-bms/src/DistributedBms/bin/Debug/net10.0/TwinCAT.Ads.Abstractions.dll
+/home/paul/dev/buildings/distributed-bms/distributed-bms/src/DistributedBms/bin/Debug/net10.0/TwinCAT.Ads.ConfigurationProviders.dll
+/home/paul/dev/buildings/distributed-bms/distributed-bms/src/DistributedBms/bin/Debug/net10.0/TwinCAT.Ads.Json.dll
+/home/paul/dev/buildings/distributed-bms/distributed-bms/src/DistributedBms/bin/Debug/net10.0/TwinCAT.Ads.Server.dll
+/home/paul/dev/buildings/distributed-bms/distributed-bms/src/DistributedBms/bin/Debug/net10.0/TwinCAT.Ads.TcpRouter.dll
+/home/paul/dev/buildings/distributed-bms/distributed-bms/src/DistributedBms/bin/Debug/net10.0/System.ComponentModel.Composition.dll
+/home/paul/dev/buildings/distributed-bms/distributed-bms/src/DistributedBms/bin/Debug/net10.0/System.Reactive.dll
+/home/paul/dev/buildings/distributed-bms/distributed-bms/src/DistributedBms/bin/Debug/net10.0/System.ServiceProcess.ServiceController.dll
+/home/paul/dev/buildings/distributed-bms/distributed-bms/src/DistributedBms/bin/Debug/net10.0/runtimes/win/lib/net10.0/System.ServiceProcess.ServiceController.dll

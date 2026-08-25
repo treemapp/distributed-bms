@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DistributedBms")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bae068a5c55889c5b2cdc149ec4994166380b320")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+db3a016cf9797316d69f1417c4c22e22944f570e")]
 [assembly: System.Reflection.AssemblyProductAttribute("DistributedBms")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DistributedBms")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -46,6 +46,18 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
+            "Beckhoff.TwinCAT.Ads": {
+              "target": "Package",
+              "version": "[7.0.292, )"
+            },
+            "Beckhoff.TwinCAT.Ads.Json": {
+              "target": "Package",
+              "version": "[7.0.292, )"
+            },
+            "Beckhoff.TwinCAT.Ads.TcpRouter": {
+              "target": "Package",
+              "version": "[7.0.292, )"
+            },
             "YamlDotNet": {
               "target": "Package",
               "version": "[18.1.0, )"

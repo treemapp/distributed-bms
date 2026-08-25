@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Beckhoff.TwinCAT.Ads" Version="7.0.292" />
+    <PackageReference Include="Beckhoff.TwinCAT.Ads.Json" Version="7.0.292" />
+    <PackageReference Include="Beckhoff.TwinCAT.Ads.TcpRouter" Version="7.0.292" />
     <PackageReference Include="YamlDotNet" Version="18.1.0" />
   </ItemGroup>
 

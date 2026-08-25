@@ -2,6 +2,172 @@
   "version": 4,
   "targets": {
     "net10.0": {
+      "Beckhoff.TwinCAT.Ads/7.0.292": {
+        "type": "package",
+        "dependencies": {
+          "Beckhoff.TwinCAT.Ads.Server": "7.0.292",
+          "System.ComponentModel.Composition": "10.0.9",
+          "System.Reactive": "6.1.0"
+        },
+        "compile": {
+          "lib/net10.0/TwinCAT.Ads.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/TwinCAT.Ads.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Beckhoff.TwinCAT.Ads.Abstractions/7.0.292": {
+        "type": "package",
+        "dependencies": {
+          "System.ServiceProcess.ServiceController": "10.0.9"
+        },
+        "compile": {
+          "lib/net10.0/TwinCAT.Ads.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/TwinCAT.Ads.Abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Beckhoff.TwinCAT.Ads.ConfigurationProviders/7.0.292": {
+        "type": "package",
+        "dependencies": {
+          "Beckhoff.TwinCAT.Ads.Abstractions": "7.0.292",
+          "System.ComponentModel.Composition": "10.0.9"
+        },
+        "compile": {
+          "lib/net10.0/TwinCAT.Ads.ConfigurationProviders.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/TwinCAT.Ads.ConfigurationProviders.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Beckhoff.TwinCAT.Ads.Json/7.0.292": {
+        "type": "package",
+        "dependencies": {
+          "Beckhoff.TwinCAT.Ads": "7.0.292",
+          "Beckhoff.TwinCAT.Ads.Abstractions": "7.0.292"
+        },
+        "compile": {
+          "lib/net10.0/TwinCAT.Ads.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/TwinCAT.Ads.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Beckhoff.TwinCAT.Ads.Server/7.0.292": {
+        "type": "package",
+        "dependencies": {
+          "Beckhoff.TwinCAT.Ads.Abstractions": "7.0.292",
+          "Beckhoff.TwinCAT.Ads.ConfigurationProviders": "7.0.292",
+          "System.ComponentModel.Composition": "10.0.9",
+          "System.Reactive": "6.1.0"
+        },
+        "compile": {
+          "lib/net10.0/TwinCAT.Ads.Server.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/TwinCAT.Ads.Server.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Beckhoff.TwinCAT.Ads.TcpRouter/7.0.292": {
+        "type": "package",
+        "dependencies": {
+          "Beckhoff.TwinCAT.Ads.Abstractions": "7.0.292",
+          "Beckhoff.TwinCAT.Ads.ConfigurationProviders": "7.0.292",
+          "System.Reactive": "6.1.0"
+        },
+        "compile": {
+          "lib/net10.0/TwinCAT.Ads.TcpRouter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/TwinCAT.Ads.TcpRouter.dll": {
+            "related": ".xml"
+          }
+        },
+        "contentFiles": {
+          "contentFiles/any/net10.0/StaticRoutes.xml": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        }
+      },
+      "System.ComponentModel.Composition/10.0.9": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/System.ComponentModel.Composition.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/System.ComponentModel.Composition.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "System.Reactive/6.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/System.Reactive.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Reactive.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.ServiceProcess.ServiceController/10.0.9": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/System.ServiceProcess.ServiceController.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/System.ServiceProcess.ServiceController.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net10.0/System.ServiceProcess.ServiceController.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "YamlDotNet/18.1.0": {
         "type": "package",
         "compile": {
@@ -18,6 +184,215 @@
     }
   },
   "libraries": {
+    "Beckhoff.TwinCAT.Ads/7.0.292": {
+      "sha512": "oCN8brTt4GNWgPJxQ4IuIevirHgQa48t6T+7CGv9P67L4e1vEwiF+xu8QVSaD88UvQwRp1W09RE5Mx98nPrYmw==",
+      "type": "package",
+      "path": "beckhoff.twincat.ads/7.0.292",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.md",
+        "Package.png",
+        "ReadMe.md",
+        "beckhoff.twincat.ads.7.0.292.nupkg.sha512",
+        "beckhoff.twincat.ads.nuspec",
+        "lib/net10.0/TwinCAT.Ads.dll",
+        "lib/net10.0/TwinCAT.Ads.xml",
+        "lib/net8.0/TwinCAT.Ads.dll",
+        "lib/net8.0/TwinCAT.Ads.xml",
+        "lib/netstandard2.0/TwinCAT.Ads.dll",
+        "lib/netstandard2.0/TwinCAT.Ads.xml"
+      ]
+    },
+    "Beckhoff.TwinCAT.Ads.Abstractions/7.0.292": {
+      "sha512": "yAe0aZJ8QoKipPblSMLQsUt6We+1u7bQ0Yz0SQSKNwZ61bPfYFt2/ujFKsT7O79Ijmnsqrhx8MsWFuG9bR/cvQ==",
+      "type": "package",
+      "path": "beckhoff.twincat.ads.abstractions/7.0.292",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.md",
+        "Package.png",
+        "ReadMe.md",
+        "beckhoff.twincat.ads.abstractions.7.0.292.nupkg.sha512",
+        "beckhoff.twincat.ads.abstractions.nuspec",
+        "lib/net10.0/TwinCAT.Ads.Abstractions.dll",
+        "lib/net10.0/TwinCAT.Ads.Abstractions.xml",
+        "lib/net8.0/TwinCAT.Ads.Abstractions.dll",
+        "lib/net8.0/TwinCAT.Ads.Abstractions.xml",
+        "lib/netstandard2.0/TwinCAT.Ads.Abstractions.dll",
+        "lib/netstandard2.0/TwinCAT.Ads.Abstractions.xml"
+      ]
+    },
+    "Beckhoff.TwinCAT.Ads.ConfigurationProviders/7.0.292": {
+      "sha512": "wHX0gKEBrlNmNBYJNBuF1Qs29cP1bNhKFu/cYN46US8rctuA7n70RRR0igJvUebeG3IGsU1Qx+bcCu3U2tM1EA==",
+      "type": "package",
+      "path": "beckhoff.twincat.ads.configurationproviders/7.0.292",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.md",
+        "Package.png",
+        "ReadMe.md",
+        "beckhoff.twincat.ads.configurationproviders.7.0.292.nupkg.sha512",
+        "beckhoff.twincat.ads.configurationproviders.nuspec",
+        "lib/net10.0/TwinCAT.Ads.ConfigurationProviders.dll",
+        "lib/net10.0/TwinCAT.Ads.ConfigurationProviders.xml",
+        "lib/net8.0/TwinCAT.Ads.ConfigurationProviders.dll",
+        "lib/net8.0/TwinCAT.Ads.ConfigurationProviders.xml",
+        "lib/netstandard2.0/TwinCAT.Ads.ConfigurationProviders.dll",
+        "lib/netstandard2.0/TwinCAT.Ads.ConfigurationProviders.xml"
+      ]
+    },
+    "Beckhoff.TwinCAT.Ads.Json/7.0.292": {
+      "sha512": "fZcyKGELAoywq84jyglgud2FsOjEXXe+BzEkSny5APj5tCA0kgHF63yZmwiWRKovPJ0L8M2ngnId+4zw1By4BA==",
+      "type": "package",
+      "path": "beckhoff.twincat.ads.json/7.0.292",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.md",
+        "Package.png",
+        "ReadMe.md",
+        "beckhoff.twincat.ads.json.7.0.292.nupkg.sha512",
+        "beckhoff.twincat.ads.json.nuspec",
+        "lib/net10.0/TwinCAT.Ads.Json.dll",
+        "lib/net10.0/TwinCAT.Ads.Json.xml",
+        "lib/net8.0/TwinCAT.Ads.Json.dll",
+        "lib/net8.0/TwinCAT.Ads.Json.xml"
+      ]
+    },
+    "Beckhoff.TwinCAT.Ads.Server/7.0.292": {
+      "sha512": "oAhfn6kcfSrWt50xuynUGazr0LT7m2g3SlATnqUCt1GgaICyxOf3XnmAi3yllGN2yrlcU2QqZF4LLl8Px0SvNw==",
+      "type": "package",
+      "path": "beckhoff.twincat.ads.server/7.0.292",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.md",
+        "Package.png",
+        "ReadMe.md",
+        "beckhoff.twincat.ads.server.7.0.292.nupkg.sha512",
+        "beckhoff.twincat.ads.server.nuspec",
+        "lib/net10.0/TwinCAT.Ads.Server.dll",
+        "lib/net10.0/TwinCAT.Ads.Server.xml",
+        "lib/net8.0/TwinCAT.Ads.Server.dll",
+        "lib/net8.0/TwinCAT.Ads.Server.xml",
+        "lib/netstandard2.0/TwinCAT.Ads.Server.dll",
+        "lib/netstandard2.0/TwinCAT.Ads.Server.xml"
+      ]
+    },
+    "Beckhoff.TwinCAT.Ads.TcpRouter/7.0.292": {
+      "sha512": "zLXTQztDtVp6fKGhKqnW2WHWa8SYuwO+vpZ21q2ghbbg3mx2Da8fNmzAleyeRuaYDC/FH7ANppq4RFc2Uy0BNA==",
+      "type": "package",
+      "path": "beckhoff.twincat.ads.tcprouter/7.0.292",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.md",
+        "Package.png",
+        "ReadMe.md",
+        "beckhoff.twincat.ads.tcprouter.7.0.292.nupkg.sha512",
+        "beckhoff.twincat.ads.tcprouter.nuspec",
+        "content/StaticRoutes.xml",
+        "contentFiles/any/net10.0/StaticRoutes.xml",
+        "contentFiles/any/net8.0/StaticRoutes.xml",
+        "contentFiles/any/netstandard2.0/StaticRoutes.xml",
+        "lib/net10.0/TwinCAT.Ads.TcpRouter.dll",
+        "lib/net10.0/TwinCAT.Ads.TcpRouter.xml",
+        "lib/net8.0/TwinCAT.Ads.TcpRouter.dll",
+        "lib/net8.0/TwinCAT.Ads.TcpRouter.xml",
+        "lib/netstandard2.0/TwinCAT.Ads.TcpRouter.dll",
+        "lib/netstandard2.0/TwinCAT.Ads.TcpRouter.xml"
+      ]
+    },
+    "System.ComponentModel.Composition/10.0.9": {
+      "sha512": "qeEr33Kz5yILup3wWSOhb3LmEE/jK9Rk0dtGbAJI/W1jn8FJwPn9BI5azZ764tQmk1/3wtWeZI8Ypu+GIW3d8Q==",
+      "type": "package",
+      "path": "system.componentmodel.composition/10.0.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.ComponentModel.Composition.targets",
+        "lib/net10.0/System.ComponentModel.Composition.dll",
+        "lib/net10.0/System.ComponentModel.Composition.xml",
+        "lib/net462/_._",
+        "lib/net8.0/System.ComponentModel.Composition.dll",
+        "lib/net8.0/System.ComponentModel.Composition.xml",
+        "lib/net9.0/System.ComponentModel.Composition.dll",
+        "lib/net9.0/System.ComponentModel.Composition.xml",
+        "lib/netstandard2.0/System.ComponentModel.Composition.dll",
+        "lib/netstandard2.0/System.ComponentModel.Composition.xml",
+        "system.componentmodel.composition.10.0.9.nupkg.sha512",
+        "system.componentmodel.composition.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Reactive/6.1.0": {
+      "sha512": "M5cCC1ZMkZr9jbSQGTHnVkb5TDN67qWCV7AP8TAHdGkvDlu0puT5NzemESNn9+HkYIDpWpocP68/i+/ame2/2w==",
+      "type": "package",
+      "path": "system.reactive/6.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net6.0-windows10.0.19041/_._",
+        "build/net6.0/_._",
+        "buildTransitive/net6.0-windows10.0.19041/_._",
+        "buildTransitive/net6.0/_._",
+        "icon.png",
+        "lib/net472/System.Reactive.dll",
+        "lib/net472/System.Reactive.xml",
+        "lib/net6.0-windows10.0.19041/System.Reactive.dll",
+        "lib/net6.0-windows10.0.19041/System.Reactive.xml",
+        "lib/net6.0/System.Reactive.dll",
+        "lib/net6.0/System.Reactive.xml",
+        "lib/netstandard2.0/System.Reactive.dll",
+        "lib/netstandard2.0/System.Reactive.xml",
+        "lib/uap10.0.18362/System.Reactive.dll",
+        "lib/uap10.0.18362/System.Reactive.xml",
+        "readme.md",
+        "system.reactive.6.1.0.nupkg.sha512",
+        "system.reactive.nuspec"
+      ]
+    },
+    "System.ServiceProcess.ServiceController/10.0.9": {
+      "sha512": "VaYklIT689DthcRzbqt3S8z3GkymiD+US+RLzMFfoPxNIyUxMpXT116cO6rVrKHSuwgdvb35HRKN/PmDmbL+3g==",
+      "type": "package",
+      "path": "system.serviceprocess.servicecontroller/10.0.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.ServiceProcess.ServiceController.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.ServiceProcess.ServiceController.targets",
+        "lib/net10.0/System.ServiceProcess.ServiceController.dll",
+        "lib/net10.0/System.ServiceProcess.ServiceController.xml",
+        "lib/net462/System.ServiceProcess.ServiceController.dll",
+        "lib/net462/System.ServiceProcess.ServiceController.xml",
+        "lib/net8.0/System.ServiceProcess.ServiceController.dll",
+        "lib/net8.0/System.ServiceProcess.ServiceController.xml",
+        "lib/net9.0/System.ServiceProcess.ServiceController.dll",
+        "lib/net9.0/System.ServiceProcess.ServiceController.xml",
+        "lib/netstandard2.0/System.ServiceProcess.ServiceController.dll",
+        "lib/netstandard2.0/System.ServiceProcess.ServiceController.xml",
+        "runtimes/win/lib/net10.0/System.ServiceProcess.ServiceController.dll",
+        "runtimes/win/lib/net10.0/System.ServiceProcess.ServiceController.xml",
+        "runtimes/win/lib/net8.0/System.ServiceProcess.ServiceController.dll",
+        "runtimes/win/lib/net8.0/System.ServiceProcess.ServiceController.xml",
+        "runtimes/win/lib/net9.0/System.ServiceProcess.ServiceController.dll",
+        "runtimes/win/lib/net9.0/System.ServiceProcess.ServiceController.xml",
+        "system.serviceprocess.servicecontroller.10.0.9.nupkg.sha512",
+        "system.serviceprocess.servicecontroller.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "YamlDotNet/18.1.0": {
       "sha512": "5K+9KFg2TdTl7VXv88Qzi/0lqK6JFoNP3lRuImPYGRV7K/QYklDyTrj4+A+KAki1JsQi6qKY+hDyY7d6WRqjrw==",
       "type": "package",
@@ -44,6 +419,9 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
+      "Beckhoff.TwinCAT.Ads >= 7.0.292",
+      "Beckhoff.TwinCAT.Ads.Json >= 7.0.292",
+      "Beckhoff.TwinCAT.Ads.TcpRouter >= 7.0.292",
       "YamlDotNet >= 18.1.0"
     ]
   },
@@ -92,6 +470,18 @@
         "framework": "net10.0",
         "targetAlias": "net10.0",
         "dependencies": {
+          "Beckhoff.TwinCAT.Ads": {
+            "target": "Package",
+            "version": "[7.0.292, )"
+          },
+          "Beckhoff.TwinCAT.Ads.Json": {
+            "target": "Package",
+            "version": "[7.0.292, )"
+          },
+          "Beckhoff.TwinCAT.Ads.TcpRouter": {
+            "target": "Package",
+            "version": "[7.0.292, )"
+          },
           "YamlDotNet": {
             "target": "Package",
             "version": "[18.1.0, )"

@@ -54,4 +54,11 @@ public class SimulatorDriver : IPlcDriver
             new Dictionary<string, object?>(_values)
         );
     }
+
+    public Task WriteAsync(
+        string sourceId,
+        object value)
+    {
+        throw new NotImplementedException();
+    }
 }

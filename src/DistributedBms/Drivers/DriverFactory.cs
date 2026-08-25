@@ -7,6 +7,7 @@ public class DriverFactory
         return driverName.ToLowerInvariant() switch
         {
             "simulator" => new SimulatorDriver(config),
+            "beckhoff-ads" => new BeckhoffDriver(config),
 
             _ => throw new InvalidOperationException(
                 $"Unknown driver: {driverName}"
