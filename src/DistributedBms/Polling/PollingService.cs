@@ -49,6 +49,33 @@ public class PollingService
             );
         }
     }
+	
+	public async Task WriteAsync(
+	    string interfaceName,
+        string sourceId,
+        object value)
+    {
+        var config = _configurationLoader.GetInterface(interfaceName);
+
+        var name = GetRequiredString(config, "name");
+
+        PollingSession session;
+
+        lock (_lock)
+        {
+            if (!_sessions.TryGetValue(name, out session!))
+            {
+                throw new InvalidOperationException(
+                    $"Interface '{interfaceName}' is not currently active"
+                );
+            }
+        }
+
+        await session.Driver.WriteAsync(
+            sourceId,
+            value
+        );
+    }
 
     private PollingSession StartSession(
         Dictionary<string, object?> config)

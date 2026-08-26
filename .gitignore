@@ -1,8 +1,8 @@
 # windows
 windows/
 
-src/DistributedBms/bin
-src/DistributedBms/obj
+src/DistributedBms/bin/
+src/DistributedBms/obj/
 
 
 # IDEs

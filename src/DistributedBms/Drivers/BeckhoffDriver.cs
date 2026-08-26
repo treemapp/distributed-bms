@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using TwinCAT.Ads;
@@ -180,6 +181,7 @@ Console.WriteLine($"ADS RESULT: {point.Key} = {value}");
     }
 
     public Task WriteAsync(
+	    //string interfaceName,
         string sourceId,
         object value)
     {
@@ -190,7 +192,7 @@ Console.WriteLine($"ADS RESULT: {point.Key} = {value}");
             );
         }
 
-        var typedValue = Convert.ToSingle(value);
+        var typedValue =  ((JsonElement)value).GetSingle();
 
         Console.WriteLine(
             $"ADS WRITE: {sourceId} -> {symbol} = {typedValue}"

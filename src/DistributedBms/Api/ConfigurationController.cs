@@ -23,6 +23,11 @@ public class ConfigController : ControllerBase
         _pollingService = pollingService;
     }
 
+    public record WriteRequest(
+        string Source,
+        object Value
+    );
+	
     [HttpGet("interfaces/{name}")]
     public IActionResult GetInterface(string name)
     {
@@ -77,6 +82,38 @@ public class ConfigController : ControllerBase
         catch (OperationCanceledException)
         {
         // Client disconnected.
+        }
+    }
+	
+	[HttpPost("interfaces/{name}/values")]
+    public async Task<IActionResult> WriteValue(
+        string name,
+        [FromBody] WriteRequest request)
+    {
+        try
+        {
+            await _pollingService.WriteAsync(
+                name,
+                request.Source,
+                request.Value
+            );
+
+            return Ok(new
+            {
+                source = request.Source,
+                value = request.Value
+            });
+        }
+        catch (FileNotFoundException)
+        {
+            return NotFound();
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(new
+            {
+                error = ex.Message
+            });
         }
     }
 }
