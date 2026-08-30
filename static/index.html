@@ -92,8 +92,8 @@ Connecting...
 </div>
 
 <script>
-const interfaceName = 'beckhoff-2';//'cabinet-1';//'ems-esp';//
-const systemName = 'beckhoff-2';//'ems-heating'; //
+const interfaceName = 'cabinet-1';//'beckhoff-2';//'ems-esp';//
+const systemName = 'beckhoff-1';//'ems-heating'; //
 
 const values = {};
 const rows = {};
@@ -189,6 +189,12 @@ async function loadSystem()
 
         for(const [pointName, point] of Object.entries(component.points))
         {
+/*console.log(
+    "POINT:",
+    point.source,
+    "WRITABLE:",
+    writable[point.source]
+);*/
             const tr = document.createElement("tr");
 
             const valueCell = document.createElement("td");
@@ -298,13 +304,19 @@ function connect()
     };
 }
 
-try {
-  getInterfaceConfig().then(
-    loadSystem().then(
-      connect));
-} catch (e) {
-  alert ('Error: ' + e.toString())
+async function start()
+{
+    try {
+        await getInterfaceConfig();
+        await loadSystem();
+        connect();
+    }
+    catch (e) {
+        alert("Error: " + e.toString());
+    }
 }
+
+start();
 
 </script>
 

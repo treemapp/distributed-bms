@@ -2,7 +2,7 @@ version: 1
 name: Beckhoff-1
 interface: cabinet-1
 components:
-  - name: tf1
+  - name: TF1
     type: fan
     role: supply-air
     points:
@@ -14,7 +14,7 @@ components:
 #        source: TF1_PV
 #        label: Output - actual
 #        units: '%'
-  - name: gt11
+  - name: GT11
     type: temperature-sensor
     role: supply-air
     points:

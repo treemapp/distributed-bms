@@ -34,6 +34,7 @@ public class ConfigurationLoader
 
         _deserializer = new DeserializerBuilder()
             .WithNamingConvention(HyphenatedNamingConvention.Instance)
+            .WithAttemptingUnquotedStringTypeDeserialization()
             .Build();
     }
 

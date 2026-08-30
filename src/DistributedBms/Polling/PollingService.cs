@@ -116,7 +116,14 @@ public class PollingService
             {
                 try
                 {
-                    var result = await session.Driver.ReadAsync();
+                    var sources = await session.Driver.ReadAsync();
+
+                    var result = new
+                    {
+                        @interface = name,
+                        timestamp = DateTime.UtcNow,
+                        sources
+                    };
 
                     session.LastResult = result;
 

@@ -85,7 +85,7 @@ public class ConfigController : ControllerBase
         }
     }
 	
-	[HttpPost("interfaces/{name}/values")]
+	[HttpPost("interfaces/{name}/write")]
     public async Task<IActionResult> WriteValue(
         string name,
         [FromBody] WriteRequest request)

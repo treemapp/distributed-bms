@@ -1,3 +1,4 @@
+using Microsoft.Extensions.FileProviders;
 using DistributedBms.Api;
 using DistributedBms.Configuration;
 using DistributedBms.Drivers;
@@ -19,8 +20,24 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
-app.UseDefaultFiles();
-app.UseStaticFiles();
+var staticPath = Path.GetFullPath(
+    Path.Combine(
+        builder.Environment.ContentRootPath,
+        "..",
+        "..",
+        "static"
+    )
+);
+
+app.UseDefaultFiles(new DefaultFilesOptions
+{
+    FileProvider = new PhysicalFileProvider(staticPath)
+});
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(staticPath)
+});
 
 app.MapControllers();
 
