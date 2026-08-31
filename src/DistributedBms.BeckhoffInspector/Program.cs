@@ -95,9 +95,6 @@ catch (Exception ex)
 
 var symbolReader = new SymbolReader(client);
 
-symbolReader.TestSymbolLoader();
-return;
-
 Console.WriteLine();
 Console.WriteLine("Reading symbols...");
 Console.WriteLine();
