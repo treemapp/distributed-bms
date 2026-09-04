@@ -3,6 +3,8 @@ windows/
 
 src/DistributedBms/bin/
 src/DistributedBms/obj/
+src/DistributedBms.BeckhoffInspector/bin/
+src/DistributedBms.BeckhoffInspector/obj/
 
 
 # IDEs
