@@ -27,11 +27,19 @@ public class ConfigurationLoader
 
     public ConfigurationLoader(IConfiguration configuration)
     {
-        _configDirectory = configuration["ConfigDirectory"]
+        var configDirectory =
+            configuration["ConfigDirectory"]
             ?? throw new InvalidOperationException(
                 "ConfigDirectory is not configured"
             );
 
+        _configDirectory = Path.GetFullPath(
+            Path.Combine(
+                AppContext.BaseDirectory,
+                configDirectory
+            )
+        );
+        
         _deserializer = new DeserializerBuilder()
             .WithNamingConvention(HyphenatedNamingConvention.Instance)
             .WithAttemptingUnquotedStringTypeDeserialization()

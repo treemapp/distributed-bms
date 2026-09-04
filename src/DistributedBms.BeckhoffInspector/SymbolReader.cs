@@ -33,7 +33,7 @@ public class SymbolReader
             CancellationToken.None
         ).GetAwaiter().GetResult();
 
-        if (!result.Succeeded)
+        if (!result.Succeeded || result.Symbols == null)
         {
             throw new InvalidOperationException(
                 $"Failed to read symbols: {result.ErrorCode}"
@@ -94,9 +94,9 @@ public class SymbolReader
                 new BeckhoffSymbol(
                     child.InstancePath,
                     child.TypeName,
-                    child.Comment ?? "",
+                    child.Comment ?? ""/*,
                     indexGroup,
-                    indexOffset
+                    indexOffset*/
                 )
             );
         }

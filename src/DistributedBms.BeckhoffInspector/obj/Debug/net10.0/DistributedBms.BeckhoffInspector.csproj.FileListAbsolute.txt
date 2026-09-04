@@ -39,3 +39,4 @@ C:\Users\pdurk\Documents\GitHub\distributed-bms\src\DistributedBms.BeckhoffInspe
 C:\Users\pdurk\Documents\GitHub\distributed-bms\src\DistributedBms.BeckhoffInspector\bin\Debug\net10.0\Microsoft.Extensions.Logging.Console.dll
 C:\Users\pdurk\Documents\GitHub\distributed-bms\src\DistributedBms.BeckhoffInspector\bin\Debug\net10.0\Microsoft.Extensions.Options.dll
 C:\Users\pdurk\Documents\GitHub\distributed-bms\src\DistributedBms.BeckhoffInspector\bin\Debug\net10.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\Users\pdurk\Documents\GitHub\distributed-bms\src\DistributedBms.BeckhoffInspector\bin\Debug\net10.0\YamlDotNet.dll

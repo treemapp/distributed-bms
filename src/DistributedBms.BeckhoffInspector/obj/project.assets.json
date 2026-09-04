@@ -349,6 +349,12 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
+      "Microsoft.NET.ILLink.Tasks/10.0.11": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.NET.ILLink.Tasks.props": {}
+        }
+      },
       "System.ComponentModel.Composition/10.0.9": {
         "type": "package",
         "compile": {
@@ -429,6 +435,455 @@
           "runtimes/win/lib/net10.0/System.ServiceProcess.ServiceController.dll": {
             "assetType": "runtime",
             "rid": "win"
+          }
+        }
+      },
+      "YamlDotNet/18.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/YamlDotNet.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/YamlDotNet.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    },
+    "net10.0/win-x64": {
+      "Beckhoff.TwinCAT.Ads/7.0.292": {
+        "type": "package",
+        "dependencies": {
+          "Beckhoff.TwinCAT.Ads.Server": "7.0.292",
+          "Microsoft.Extensions.Logging.Abstractions": "10.0.9",
+          "System.ComponentModel.Composition": "10.0.9",
+          "System.Reactive": "6.1.0"
+        },
+        "compile": {
+          "lib/net10.0/TwinCAT.Ads.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/TwinCAT.Ads.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Beckhoff.TwinCAT.Ads.Abstractions/7.0.292": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.9",
+          "Microsoft.Extensions.Logging.Abstractions": "10.0.9",
+          "System.ServiceProcess.ServiceController": "10.0.9"
+        },
+        "compile": {
+          "lib/net10.0/TwinCAT.Ads.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/TwinCAT.Ads.Abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Beckhoff.TwinCAT.Ads.ConfigurationProviders/7.0.292": {
+        "type": "package",
+        "dependencies": {
+          "Beckhoff.TwinCAT.Ads.Abstractions": "7.0.292",
+          "Microsoft.Extensions.Configuration": "10.0.9",
+          "System.ComponentModel.Composition": "10.0.9"
+        },
+        "compile": {
+          "lib/net10.0/TwinCAT.Ads.ConfigurationProviders.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/TwinCAT.Ads.ConfigurationProviders.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Beckhoff.TwinCAT.Ads.Server/7.0.292": {
+        "type": "package",
+        "dependencies": {
+          "Beckhoff.TwinCAT.Ads.Abstractions": "7.0.292",
+          "Beckhoff.TwinCAT.Ads.ConfigurationProviders": "7.0.292",
+          "Microsoft.Extensions.Configuration": "10.0.9",
+          "Microsoft.Extensions.Configuration.Binder": "10.0.9",
+          "Microsoft.Extensions.Logging.Abstractions": "10.0.9",
+          "System.ComponentModel.Composition": "10.0.9",
+          "System.Reactive": "6.1.0"
+        },
+        "compile": {
+          "lib/net10.0/TwinCAT.Ads.Server.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/TwinCAT.Ads.Server.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Beckhoff.TwinCAT.Ads.TcpRouter/7.0.292": {
+        "type": "package",
+        "dependencies": {
+          "Beckhoff.TwinCAT.Ads.Abstractions": "7.0.292",
+          "Beckhoff.TwinCAT.Ads.ConfigurationProviders": "7.0.292",
+          "Microsoft.Extensions.Configuration": "10.0.9",
+          "Microsoft.Extensions.Configuration.Binder": "10.0.9",
+          "Microsoft.Extensions.Logging.Abstractions": "10.0.9",
+          "System.Reactive": "6.1.0"
+        },
+        "compile": {
+          "lib/net10.0/TwinCAT.Ads.TcpRouter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/TwinCAT.Ads.TcpRouter.dll": {
+            "related": ".xml"
+          }
+        },
+        "contentFiles": {
+          "contentFiles/any/net10.0/StaticRoutes.xml": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        }
+      },
+      "Microsoft.Extensions.Configuration/10.0.9": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.9",
+          "Microsoft.Extensions.Primitives": "10.0.9"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.Extensions.Configuration.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.Extensions.Configuration.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Configuration.Abstractions/10.0.9": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "10.0.9"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Configuration.Binder/10.0.9": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "10.0.9",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.9"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.Extensions.Configuration.Binder.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.Extensions.Configuration.Binder.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.0/Microsoft.Extensions.Configuration.Binder.targets": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection/10.0.9": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.9"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/10.0.9": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Logging/10.0.9": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "10.0.9",
+          "Microsoft.Extensions.Logging.Abstractions": "10.0.9",
+          "Microsoft.Extensions.Options": "10.0.9"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.Extensions.Logging.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.Extensions.Logging.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/10.0.9": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.9"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
+        }
+      },
+      "Microsoft.Extensions.Logging.Configuration/10.0.9": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "10.0.9",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.9",
+          "Microsoft.Extensions.Configuration.Binder": "10.0.9",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.9",
+          "Microsoft.Extensions.Logging": "10.0.9",
+          "Microsoft.Extensions.Logging.Abstractions": "10.0.9",
+          "Microsoft.Extensions.Options": "10.0.9",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "10.0.9"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.Extensions.Logging.Configuration.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.Extensions.Logging.Configuration.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Logging.Console/10.0.9": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.9",
+          "Microsoft.Extensions.Logging": "10.0.9",
+          "Microsoft.Extensions.Logging.Abstractions": "10.0.9",
+          "Microsoft.Extensions.Logging.Configuration": "10.0.9",
+          "Microsoft.Extensions.Options": "10.0.9"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.Extensions.Logging.Console.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.Extensions.Logging.Console.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Options/10.0.9": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.9",
+          "Microsoft.Extensions.Primitives": "10.0.9"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.Extensions.Options.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.Extensions.Options.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/Microsoft.Extensions.Options.targets": {}
+        }
+      },
+      "Microsoft.Extensions.Options.ConfigurationExtensions/10.0.9": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.9",
+          "Microsoft.Extensions.Configuration.Binder": "10.0.9",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.9",
+          "Microsoft.Extensions.Options": "10.0.9",
+          "Microsoft.Extensions.Primitives": "10.0.9"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Primitives/10.0.9": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Microsoft.Extensions.Primitives.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.Extensions.Primitives.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.NET.ILLink.Tasks/10.0.11": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.NET.ILLink.Tasks.props": {}
+        }
+      },
+      "System.ComponentModel.Composition/10.0.9": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/System.ComponentModel.Composition.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/System.ComponentModel.Composition.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "System.Diagnostics.EventLog/10.0.9": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/System.Diagnostics.EventLog.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "runtimes/win/lib/net10.0/System.Diagnostics.EventLog.Messages.dll": {},
+          "runtimes/win/lib/net10.0/System.Diagnostics.EventLog.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "System.Reactive/6.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/System.Reactive.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Reactive.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.ServiceProcess.ServiceController/10.0.9": {
+        "type": "package",
+        "dependencies": {
+          "System.Diagnostics.EventLog": "10.0.9"
+        },
+        "compile": {
+          "lib/net10.0/System.ServiceProcess.ServiceController.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "runtimes/win/lib/net10.0/System.ServiceProcess.ServiceController.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "YamlDotNet/18.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/YamlDotNet.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/YamlDotNet.dll": {
+            "related": ".xml"
           }
         }
       }
@@ -963,6 +1418,56 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Microsoft.NET.ILLink.Tasks/10.0.11": {
+      "sha512": "IBf7lbovvjGWVWXZX5cJ/cO0WXbId0Zq4BuSeT94mGZuOAP66oMeH9PTBZ9Jpp3Jb6jtK0qm/NyUbPRo1gC/wQ==",
+      "type": "package",
+      "path": "microsoft.net.illink.tasks/10.0.11",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "Sdk/Sdk.props",
+        "THIRD-PARTY-NOTICES.TXT",
+        "analyzers/dotnet/cs/ILLink.CodeFixProvider.dll",
+        "analyzers/dotnet/cs/ILLink.RoslynAnalyzer.dll",
+        "build/Microsoft.NET.ILLink.Analyzers.props",
+        "build/Microsoft.NET.ILLink.Tasks.props",
+        "build/Microsoft.NET.ILLink.targets",
+        "microsoft.net.illink.tasks.10.0.11.nupkg.sha512",
+        "microsoft.net.illink.tasks.nuspec",
+        "tools/net/ILLink.Tasks.deps.json",
+        "tools/net/ILLink.Tasks.dll",
+        "tools/net/Mono.Cecil.Mdb.dll",
+        "tools/net/Mono.Cecil.Pdb.dll",
+        "tools/net/Mono.Cecil.Rocks.dll",
+        "tools/net/Mono.Cecil.dll",
+        "tools/net/Sdk/Sdk.props",
+        "tools/net/build/Microsoft.NET.ILLink.Analyzers.props",
+        "tools/net/build/Microsoft.NET.ILLink.Tasks.props",
+        "tools/net/build/Microsoft.NET.ILLink.targets",
+        "tools/net/illink.deps.json",
+        "tools/net/illink.dll",
+        "tools/net/illink.runtimeconfig.json",
+        "tools/netframework/ILLink.Tasks.dll",
+        "tools/netframework/ILLink.Tasks.dll.config",
+        "tools/netframework/Mono.Cecil.Mdb.dll",
+        "tools/netframework/Mono.Cecil.Pdb.dll",
+        "tools/netframework/Mono.Cecil.Rocks.dll",
+        "tools/netframework/Mono.Cecil.dll",
+        "tools/netframework/Sdk/Sdk.props",
+        "tools/netframework/System.Buffers.dll",
+        "tools/netframework/System.Collections.Immutable.dll",
+        "tools/netframework/System.Memory.dll",
+        "tools/netframework/System.Numerics.Vectors.dll",
+        "tools/netframework/System.Reflection.Metadata.dll",
+        "tools/netframework/System.Runtime.CompilerServices.Unsafe.dll",
+        "tools/netframework/build/Microsoft.NET.ILLink.Analyzers.props",
+        "tools/netframework/build/Microsoft.NET.ILLink.Tasks.props",
+        "tools/netframework/build/Microsoft.NET.ILLink.targets",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "System.ComponentModel.Composition/10.0.9": {
       "sha512": "qeEr33Kz5yILup3wWSOhb3LmEE/jK9Rk0dtGbAJI/W1jn8FJwPn9BI5azZ764tQmk1/3wtWeZI8Ypu+GIW3d8Q==",
       "type": "package",
@@ -1087,6 +1592,29 @@
         "system.serviceprocess.servicecontroller.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "YamlDotNet/18.1.0": {
+      "sha512": "5K+9KFg2TdTl7VXv88Qzi/0lqK6JFoNP3lRuImPYGRV7K/QYklDyTrj4+A+KAki1JsQi6qKY+hDyY7d6WRqjrw==",
+      "type": "package",
+      "path": "yamldotnet/18.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "images/yamldotnet.png",
+        "lib/net10.0/YamlDotNet.dll",
+        "lib/net10.0/YamlDotNet.xml",
+        "lib/net47/YamlDotNet.dll",
+        "lib/net47/YamlDotNet.xml",
+        "lib/net8.0/YamlDotNet.dll",
+        "lib/net8.0/YamlDotNet.xml",
+        "lib/netstandard2.0/YamlDotNet.dll",
+        "lib/netstandard2.0/YamlDotNet.xml",
+        "lib/netstandard2.1/YamlDotNet.dll",
+        "lib/netstandard2.1/YamlDotNet.xml",
+        "yamldotnet.18.1.0.nupkg.sha512",
+        "yamldotnet.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -1095,7 +1623,9 @@
       "Beckhoff.TwinCAT.Ads.TcpRouter >= 7.0.292",
       "Microsoft.Extensions.Configuration >= 10.0.9",
       "Microsoft.Extensions.Logging >= 10.0.9",
-      "Microsoft.Extensions.Logging.Console >= 10.0.9"
+      "Microsoft.Extensions.Logging.Console >= 10.0.9",
+      "Microsoft.NET.ILLink.Tasks >= 10.0.11",
+      "YamlDotNet >= 18.1.0"
     ]
   },
   "packageFolders": {
@@ -1105,7 +1635,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\pdurk\\Documents\\GitHub\\distributed-bms\\src\\DistributedBms.BeckhoffInspector\\DistributedBms.BeckhoffInspector.csproj",
-      "projectName": "DistributedBms.BeckhoffInspector",
+      "projectName": "BeckhoffInspector",
       "projectPath": "C:\\Users\\pdurk\\Documents\\GitHub\\distributed-bms\\src\\DistributedBms.BeckhoffInspector\\DistributedBms.BeckhoffInspector.csproj",
       "packagesPath": "C:\\Users\\pdurk\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\pdurk\\Documents\\GitHub\\distributed-bms\\src\\DistributedBms.BeckhoffInspector\\obj\\",
@@ -1162,6 +1692,16 @@
           "Microsoft.Extensions.Logging.Console": {
             "target": "Package",
             "version": "[10.0.9, )"
+          },
+          "Microsoft.NET.ILLink.Tasks": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[10.0.11, )",
+            "autoReferenced": true
+          },
+          "YamlDotNet": {
+            "target": "Package",
+            "version": "[18.1.0, )"
           }
         },
         "imports": [
@@ -1175,6 +1715,20 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+            "version": "[10.0.11, 10.0.11]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Runtime.win-x64",
+            "version": "[10.0.11, 10.0.11]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+            "version": "[10.0.11, 10.0.11]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -1455,6 +2009,11 @@
           "System.Xml.XPath": "(,4.3.32767]",
           "System.Xml.XPath.XDocument": "(,5.0.32767]"
         }
+      }
+    },
+    "runtimes": {
+      "win-x64": {
+        "#import": []
       }
     }
   }

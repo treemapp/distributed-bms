@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DistributedBms.BeckhoffInspector")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+689ebd3df0918f8467e37de6c49e289a36e6776f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c539441ef7ab8312db48f840fe4e655496e27131")]
 [assembly: System.Reflection.AssemblyProductAttribute("DistributedBms.BeckhoffInspector")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DistributedBms.BeckhoffInspector")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

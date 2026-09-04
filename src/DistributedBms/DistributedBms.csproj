@@ -11,6 +11,15 @@
     <PackageReference Include="Beckhoff.TwinCAT.Ads.Json" Version="7.0.292" />
     <PackageReference Include="Beckhoff.TwinCAT.Ads.TcpRouter" Version="7.0.292" />
     <PackageReference Include="YamlDotNet" Version="18.1.0" />
+    <Content Include="../../static/**/*"
+             Link="static/%(RecursiveDir)%(Filename)%(Extension)"
+             CopyToOutputDirectory="PreserveNewest"
+             CopyToPublishDirectory="PreserveNewest" />
+
+    <Content Include="../../config/**/*"
+             Link="config/%(RecursiveDir)%(Filename)%(Extension)"
+             CopyToOutputDirectory="PreserveNewest"
+             CopyToPublishDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>

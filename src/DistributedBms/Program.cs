@@ -20,13 +20,22 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
-var staticPath = Path.GetFullPath(
+/*Console.WriteLine(
+    $"ContentRootPath: {builder.Environment.ContentRootPath}"
+);*/
+
+/*var staticPath = Path.GetFullPath(
     Path.Combine(
         builder.Environment.ContentRootPath,
         "..",
         "..",
         "static"
     )
+);*/
+
+var staticPath = Path.Combine(
+    AppContext.BaseDirectory,
+    "static"
 );
 
 app.UseDefaultFiles(new DefaultFilesOptions

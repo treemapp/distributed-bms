@@ -14,5 +14,8 @@ dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=
 
 # if target machine has .net 10:
 
-dotnet publish -c Release -r win-x64 --self-contained false -p:PublishSingleFile=true
+dotnet publish -c Release -r win-x64 --self-contained false -p:PublishSingleFile=true -p:AssemblyName=BeckhoffInspector
 
+dotnet restore
+
+dotnet add package YamlDotNet --version 18.1.0

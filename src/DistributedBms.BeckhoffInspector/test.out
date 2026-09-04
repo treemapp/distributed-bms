@@ -1,0 +1,31 @@
+version: 1
+name: test-1
+driver: beckhoff-ads
+timestamp: 2026-09-03 18:09:19+02:00
+ip-address: 192.168.0.208
+ams-net-id: 5.2.78.118.1.1
+port: 801
+local-ams-net-id: 192.168.0.177.1.1
+number-of-sources: 7
+sources:
+- name: MAIN.COUNTER
+  type: DWORD
+  comment: ''
+- name: MAIN.INITIALISED
+  type: BOOL
+  comment: ''
+- name: MAIN.PV
+  type: REAL
+  comment: ''
+- name: MAIN.RAMPRATE
+  type: REAL
+  comment: ''
+- name: MAIN.RUN
+  type: BOOL
+  comment: ''
+- name: MAIN.SETPOINT
+  type: REAL
+  comment: ''
+- name: MAIN.VALUE
+  type: REAL
+  comment: ''

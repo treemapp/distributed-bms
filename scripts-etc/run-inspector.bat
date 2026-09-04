@@ -1,0 +1,1 @@
+BeckhoffInspector.exe cabinet-1   192.168.0.208 5.2.78.118.1.1 801 192.168.0.177.1.1 1 test.yaml
