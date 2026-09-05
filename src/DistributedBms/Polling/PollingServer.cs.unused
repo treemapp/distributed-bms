@@ -1,5 +1,0 @@
-namespace DistributedBms.Polling;
-
-public class PollingService
-{
-}
